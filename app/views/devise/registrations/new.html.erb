@@ -2,15 +2,25 @@
   <div class="row mt-5 d-flex justify-content-center">
     <div class="col-10 col-md-8">
       <h2 class="mb-4">Create account</h2>
-
+      <% @account_type = ['basic', 'premium', 'guest'] %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-
         <div class="form-inputs">
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "first name" },
+                      placeholder: "Emily" %>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "last name" },
+                      placeholder: "Burns" %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+                      input_html: { autocomplete: "email" },
+                      placeholder: "emily@gmail.com" %>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -18,6 +28,10 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :account_type,
+                      as: :select,
+                      collection: @account_type,
+                      selected: @account_type.first%>
         </div>
 
         <div class="form-actions">
