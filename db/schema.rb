@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_11_17_173754) do
 
   # These are extensions that must be enabled in order to support this database
@@ -34,6 +35,21 @@ ActiveRecord::Schema.define(version: 2020_11_17_173754) do
     t.index ["demo_id"], name: "index_pitches_on_demo_id"
   end
 
+  create_table "personas", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.text "bio"
+    t.string "nationality"
+    t.string "location"
+    t.string "job"
+    t.string "relationship_status"
+    t.string "income"
+    t.bigint "demo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["demo_id"], name: "index_personas_on_demo_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,4 +67,5 @@ ActiveRecord::Schema.define(version: 2020_11_17_173754) do
 
   add_foreign_key "demos", "users"
   add_foreign_key "pitches", "demos"
+  add_foreign_key "personas", "demos"
 end
