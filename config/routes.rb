@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  # get 'personas/new'
+  # get 'personas/create'
+  # get 'personas/destroy'
   # get 'users/dashboard'
   # get 'demos/dashboard'
   # get 'demos/new'
@@ -12,13 +15,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get "dashboard", to: "users#dashboard"
+  get "dashboard", to: "demos#dashboard"
 
-  resources :demo, except: [:index] do
-    # collection do
-    #   get :dashboard
-    # end
+  resources :demos, except: [:index] do
+    # resources :pitches, only: [:new, :create]
+    resources :personas, except: [:edit, :update]
   end
 end
-
-
