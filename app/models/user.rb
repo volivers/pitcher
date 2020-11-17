@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :demos, dependent: :destroy
-  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
