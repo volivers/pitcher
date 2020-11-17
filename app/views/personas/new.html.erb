@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
       <h2 class="mb-4">New persona</h2>
 
-      <%= simple_form_for @persona do |f| %>
+      <%= simple_form_for [@demo, @persona] do |f| %>
         <div class="form-inputs">
             <%= f.input :name, placeholder: 'Mathias' %>
             <%= f.input :age, placeholder: '24' %>

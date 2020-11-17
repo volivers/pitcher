@@ -1,4 +1,6 @@
 class PersonasController < ApplicationController
+  before_action :set_demo, except: [:destroy]
+
   def new
     @persona = Persona.new
   end
@@ -22,6 +24,10 @@ class PersonasController < ApplicationController
   private
 
   def persona_params
-    params.require(:persona).permit(:name, :age, :bio, :nationality, :location, :job, :relationship_status, :income)
+    params.require(:persona).permit(:name, :age, :bio, :nationality, :location, :job, :relationship_status, :income, :demo_id)
+  end
+
+  def set_demo
+    @demo = Demo.find(params[:demo_id])
   end
 end
