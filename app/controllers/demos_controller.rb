@@ -1,10 +1,11 @@
 class DemosController < ApplicationController
   before_action :find_user
-  before_action :find_demo, except: [:dashboard, :new, :create]
+  before_action :find_demo, except: %i[dashboard new create]
 
   def dashboard
     @demos = Demo.all
-    @demo = Demo.new
+    @personas = Persona.all
+    @demo_new = Demo.new
   end
 
   def new
