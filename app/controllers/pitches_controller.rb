@@ -1,5 +1,4 @@
 class PitchesController < ApplicationController
-  
 
   def new
     @pitch = Pitch.new
@@ -14,10 +13,11 @@ class PitchesController < ApplicationController
       redirect_to personas_new, notice: 'Kitty: Yay! 🎉 You create your pitch.'
     else
       render :new
+    end
   end
 
-private
- 
+  private
+
   def set_pitch
     @pitch = Pitch.find(params[:id])
   end

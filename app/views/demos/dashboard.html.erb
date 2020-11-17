@@ -1,2 +1,36 @@
-<h1>Demos#dashboard</h1>
-<p>Find me in app/views/demos/dashboard.html.erb</p>
+    <!-- Modal -->
+    <%= render "modal-demo_new" %>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-2 col-lg-1">
+          <!-- Button trigger modal -->
+          <a type="button" class="btn btn-demo" data-toggle="modal" data-target="#demoModal">
+            <%= image_tag "icons/add.svg" %>
+          </a>
+        </div>
+        <div class="col-7 col-lg-8">
+          <div class="cards-demo">
+            <% if @demos.any? %>
+            <% @demos.each do |demo| %>
+            <div class="card-demo-container">
+              <%= link_to demo_path(demo) do %>
+              <div class="card-demo">
+                <div class="card-demo-top">
+                  <div class="card-demo-team">
+                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-trip-user avatar-bordered" %>
+                  </div>
+                </div>
+                <div class="card-demo-bottom">
+                  <p><%= demo.name %></p>
+                  <h6><%= demo.name %></h6>
+                  <h4><%= demo.name %></h4>
+                </div>
+              </div>
+              <% end %>
+            </div>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
