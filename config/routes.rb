@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-  get 'personas/new'
-  get 'personas/create'
-  get 'personas/destroy'
+  # get 'personas/new'
+  # get 'personas/create'
+  # get 'personas/destroy'
   # get 'users/dashboard'
   # get 'demos/dashboard'
   # get 'demos/new'
