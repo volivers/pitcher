@@ -15,7 +15,7 @@ class DemosController < ApplicationController
     @demo.user = current_user
 
     if @demo.save
-      redirect_to dashboard_path, notice: 'Yay! 🎉 Your demo was successfully added. Check it out 👇'
+      redirect_to new_demo_pitch_path(@demo), notice: 'Yay! 🎉 Your demo was successfully added. Check it out 👇'
     else
       render :partial => 'modal-demo_new'
     end
