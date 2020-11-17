@@ -1,4 +1,6 @@
 class DemosController < ApplicationController
+  before_action :set_demo, except: [:destroy]
+  
   def dashboard
     @demos = Demo.all
     @demo = Demo.new
@@ -34,5 +36,9 @@ class DemosController < ApplicationController
 
   def demo_params
     params.require(:demo).permit(:name, :url, :current_user)
+  end
+
+  def set_demo
+    @demo = Demo.find(params[:id])
   end
 end
