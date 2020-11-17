@@ -1,4 +1,5 @@
 class PitchesController < ApplicationController
+  
 
   def new
     @pitch = Pitch.new
@@ -15,17 +16,8 @@ class PitchesController < ApplicationController
       render :new
   end
 
-
-  def dashboard
-  end
-
-
-end
-
-
-
-
 private
+ 
   def set_pitch
     @pitch = Pitch.find(params[:id])
   end
