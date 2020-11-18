@@ -21,8 +21,12 @@
                   </div>
                 </div>
                 <div class="card-demo-bottom">
-                  <p><%= demo.name %></p>
-                  <h6><%= demo.name %></h6>
+                  <% if demo.pitches.any? %>
+                    <h6><%= demo.pitches.first.pain %></h6>
+                  <% end %>
+                  <% if demo.personas.any? %>
+                    <h6><%= demo.personas.first.name %></h6>
+                  <% end %>
                   <h4><%= demo.name %></h4>
                 </div>
               </div>
