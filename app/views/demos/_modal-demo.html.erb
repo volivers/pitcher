@@ -1,4 +1,4 @@
-    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal fade" data-valid="<%= @valid %>" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -8,29 +8,29 @@
             </button>
           </div>
           <%= simple_form_for @demo, remote: true do |f| %>
-          <div class="modal-body">
-            <h6>
-              Ready to take the world by storm?
+            <div class="modal-body">
+              <h6>
+                Ready to take the world by storm?
 
-              First, let’s give your demo a name!
-            </h6>
-            <div class="form-inputs">
-              <%= f.error_notification %>
+                First, let’s give your demo a name!
+              </h6>
+              <div class="form-inputs">
+                <%= f.error_notification %>
 
-              <%= f.input :name,
-              label: false,
-              required: true,
-              autofocus: true,
-              placeholder: "Awesome Startup Name" %>
+                <%= f.input :name,
+                label: false,
+                required: true,
+                autofocus: true,
+                placeholder: "Awesome Startup Name" %>
+              </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <h6 class="text-justify">Once you're done, click the link, below 👇</h6>
-            <div class="form-actions">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Maybe later..</button>
-              <%= f.button :submit, "Let's go!", class: 'btn btn-primary' %>
+            <div class="modal-footer">
+              <h6 class="text-justify">Once you're done, click the link, below 👇</h6>
+              <div class="form-actions">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Maybe later..</button>
+                <%= f.button :submit, "Let's go!", class: 'btn btn-primary' %>
+              </div>
             </div>
-          </div>
           <% end %>
         </div>
       </div>

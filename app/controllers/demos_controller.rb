@@ -6,6 +6,7 @@ class DemosController < ApplicationController
     @demos = Demo.all
     @personas = Persona.all
     @demo = Demo.new
+    @valid = true
   end
 
   def new
@@ -17,10 +18,12 @@ class DemosController < ApplicationController
     @demo.user = current_user
 
     if @demo.save
+      @valid = @demo.valid?
       redirect_to new_demo_pitch_path(@demo), notice: 'Yay! 🎉 Your demo was successfully added. Check it out 👇'
     else
+      @valid = @demo.valid?
       render :dashboard
-      #render :partial => 'modal-demo'
+      #render 'modal-demo'
     end
   end
 
