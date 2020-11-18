@@ -8,7 +8,7 @@ class PitchesController < ApplicationController
     @pitch = Pitch.new(pitch_params)
     @pitch.demo_id = Demo.find(params[:demo_id]).id
 
-    if @pitch.save!
+    if @pitch.save
       redirect_to new_demo_persona_path, notice: 'Kitty: Yay! 🎉 You create your pitch.'
     else
       render :new
