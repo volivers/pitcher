@@ -22,7 +22,9 @@
 }
 
 .footer-links a:hover {
+  color: $green;
   opacity: 1;
+  transition: all 0.3 ease-in;
 }
 
 .footer .fa-heart {
