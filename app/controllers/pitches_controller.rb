@@ -1,5 +1,13 @@
 class PitchesController < ApplicationController
   before_action :set_demo, only: [:new, :create]
+
+
+  def dashboard
+    @pitches = Pitch.all
+    @personas = Persona.all
+    @pitch = Pitch.new
+  end
+
   def new
     @pitch = Pitch.new
   end
@@ -7,13 +15,34 @@ class PitchesController < ApplicationController
   def create
     @pitch = Pitch.new(pitch_params)
     @pitch.demo_id = Demo.find(params[:demo_id]).id
+    @pitch.user = current_user
 
     if @pitch.save
       redirect_to new_demo_persona_path, notice: 'Kitty: Yay! 🎉 You create your pitch.'
     else
-      render :new
+      render :partial => 'modal-pitch'
     end
   end
+
+  def show
+    @pitches = Pitch.all
+    @personas = Persona.all
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    if @pitch.destroy
+      redirect_to dashboard_path, notice: 'Yay! ❌ Your pitch was successfully deleted.'
+    else
+      render :show
+    end
+  end
+
 
   private
 
@@ -27,5 +56,9 @@ class PitchesController < ApplicationController
 
   def pitch_params
     params.require(:pitch).permit(:demo_id, :pain, :target, :solution) # --> not sure
+  end
+
+  def find_user
+    @user = current_user
   end
 end

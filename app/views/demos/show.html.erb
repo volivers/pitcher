@@ -5,7 +5,7 @@
           <h1><%= @demo.name %></h1>
         </div>
         <div class="demo-details">
-          <p><i class="fas fa-map-marker-alt"></i> <%= current_user.first_name %> <%= current_user.last_name %></p>
+          <p><i class="far fa-user"></i></i> <%= current_user.first_name %> <%= current_user.last_name %></p>
           <p><i class="fas fa-calendar-alt"></i> <%= @demo.created_at %></p>
         </div>
       </div>
@@ -13,19 +13,50 @@
         <div id="pitch">
           <h4>Pitch info here:</h4>
           <% if @pitches.blank? %>
-            Add a New Pitch!
+          <div class="row mt-5">
+          <div class="col-12">
+          <%= link_to 'Create a new pitch', new_demo_pitch_path %>
+
           <% else %>
             <%# @pitches.each do |pitch| %>
             <%# end %>
+          <h5>Pain:</h5>
+          <p><%= @pitch.pain %></p>
+          <h5>Target:</h5>
+          <p><%= @pitch.target %></p>
+          <h5>Solution:</h5>
+          <p><%= @pitch.solution %></p>
+
           <% end %>
         </div>
         <div id="personae">
           <h4>Personae info here:</h4>
           <% if @personas.blank? %>
-            Add a New Persona!
+            <div class="row mt-5">
+          <div class="col-12">
+          <%= link_to 'Create a new persona', new_demo_persona_path %>
           <% else %>
-            <%# @personas.each do |persona| %>
-            <%# end %>
+            <% @personas.each do |persona| %>
+
+              <h5>Name:</h5>
+              <p><%= @persona.name %></p>
+              <h5>Age:</h5>
+              <p><%= @persona.age %></p>
+              <h5>Bio:</h5>
+              <p><%= @persona.bio %></p>
+              <h5>Nationality:</h5>
+              <p><%= @persona.nationality %></p>
+              <h5>Location:</h5>
+              <p><%= @persona.location %></p>
+              <h5>Job:</h5>
+              <p><%= @persona.job %></p>
+              <h5>Relationship status:</h5>
+              <p><%= @persona.relationship_status %></p>
+              <h5>Income:</h5>
+              <p><%= @persona.income %></p>
+
+            <% end %>
+            <p></p>
           <% end %>
         </div>
       </div>
