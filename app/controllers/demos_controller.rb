@@ -23,12 +23,15 @@ class DemosController < ApplicationController
     else
       @valid = @demo.valid?
       render :dashboard
-      #render 'modal-demo'
+      # render 'modal-demo'
     end
   end
 
   def show
-    @personas = Persona.all
+    # @personas = Persona.all
+    # @persona = Persona.find(params[:id])
+    # @pitches = Pitch.all
+    # @pitch = Pitch.find(params[:id])
   end
 
   def edit
