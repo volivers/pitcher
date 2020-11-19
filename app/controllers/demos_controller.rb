@@ -10,46 +10,20 @@ class DemosController < ApplicationController
   end
 
   def new
-    # Added by Vasco
-    session[:demo_params] ||= {}
-    @demo = Demo.new(session[:demo_params])
-    @demo.current_step = session[:demo_step]
   end
 
   def create
     @demos = Demo.all
-    # @demo = Demo.new(demo_params)
+    @demo = Demo.new(demo_params)
     @demo.user = current_user
 
-    # if @demo.save
-    #   @valid = @demo.valid?
-    #   redirect_to new_demo_pitch_path(@demo), notice: 'Yay! 🎉 Your demo was successfully added. Check it out 👇'
-    # else
-    #   @valid = @demo.valid?
-    #   render :dashboard
-    #   #render 'modal-demo'
-    # end
-
-    # Added by Vasco
-    session[:demo_params].deep_merge!(params[:demo]) if params[:demo]
-    @demo = Demo.new(session[:demo_params])
-    @demo.current_step = session[:demo_step]
-    if @demo.valid?
-      if params[:back_button]
-        @demo.previous_step
-      elsif @demo.last_step?
-        @demo.save if @demo.all_valid?
-      else
-        @demo.next_step
-      end
-      session[:demo_step] = @demo.current_step
-    end
-    if @demo.new_record?
-      render "new"
+    if @demo.save
+      @valid = @demo.valid?
+      redirect_to new_demo_pitch_path(@demo), notice: 'Yay! 🎉 Your demo was successfully added. Check it out 👇'
     else
-      session[:demo_step] = session[:demo_params] = nil
-      flash[:notice] = "Progress saved!"
-      redirect_to @demo
+      @valid = @demo.valid?
+      render :dashboard
+      #render 'modal-demo'
     end
   end
 

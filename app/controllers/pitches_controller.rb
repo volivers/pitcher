@@ -1,5 +1,7 @@
 class PitchesController < ApplicationController
   before_action :set_demo, only: [:new, :create, :edit, :update]
+  before_action :set_pitch, only: [:edit, :update, :destroy]
+
   def new
     @pitch = Pitch.new
   end
@@ -9,7 +11,7 @@ class PitchesController < ApplicationController
     @pitch.demo_id = Demo.find(params[:demo_id]).id
 
     if @pitch.save
-      redirect_to new_demo_persona_path, notice: 'Kitty: Yay! 🎉 You create your pitch.'
+      redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
     else
       render :new
     end
@@ -21,11 +23,10 @@ class PitchesController < ApplicationController
 
   def update
     @pitch.update(pitch_params)
-    @pitch.demo_id = Pitch.find(params[:demo_id]).id
-    @persona = Persona.find(params[:persona_id])
+    @pitch.demo = @demo
 
     if @pitch.save
-      redirect_to edit_demo_persona_path(@pitch), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+      redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
     else
       render :new
     end

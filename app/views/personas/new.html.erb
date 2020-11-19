@@ -13,12 +13,12 @@
             <%= f.input :job, placeholder: 'Journalist (full-time)' %>
             <%= f.input :relationship_status, placeholder: "It's complicated" %>
             <%= f.input :income, placeholder: '$80.000' %>
+            <%= hidden_field_tag 'pitch', @pitch.id %>
         </div>
 
-        <div class="form-actions">
+        <div class="form-actions d-flex">
+          <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-outline-primary w-100 mb-2 mr-4'} %>
           <%= f.button :submit, "Next", class: 'btn btn-primary w-100 mb-2' %>
-          <%= link_to "Back", :back, {:class=>'btn btn-outline-primary w-100 mb-2'} %>
-          <%= f.button :submit, "Exit", class: 'btn btn-outline-primary w-100 mb-2', id: 'exit-btn' %>
         </div>
       <% end %>
     </div>
