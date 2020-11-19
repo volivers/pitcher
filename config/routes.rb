@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get "dashboard", to: "demos#dashboard"
 
   resources :demos, except: [:index] do
-    resources :pitches, only: [:new, :create]
-    resources :personas, except: [:edit, :update]
+    resources :pitches, only: [:new, :create, :edit, :update]
+    resources :personas
   end
 end

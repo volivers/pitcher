@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
-      <h2 class="mb-4">New persona</h2>
+      <h2 class="mb-4">Update Persona</h2>
 
       <%= simple_form_for [@demo, @persona] do |f| %>
         <div class="form-inputs">
@@ -16,9 +16,8 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Next", class: 'btn btn-primary w-100 mb-2' %>
-          <%= link_to "Back", :back, {:class=>'btn btn-outline-primary w-100 mb-2'} %>
-          <%= f.button :submit, "Exit", class: 'btn btn-outline-primary w-100 mb-2', id: 'exit-btn' %>
+          <%= f.button :submit, "Update", class: 'btn btn-primary w-100 mb-2' %>
+          <%= link_to "Cancel", :back, {:class=>'btn btn-outline-primary w-100 mb-2'} %>
         </div>
       <% end %>
     </div>

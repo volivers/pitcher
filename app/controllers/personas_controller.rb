@@ -16,6 +16,21 @@ class PersonasController < ApplicationController
     end
   end
 
+  def edit
+    @persona = Persona.find(params[:id])
+  end
+
+  def update
+    @persona.update(persona_params)
+    @persona.demo_id = Demo.find(params[:demo_id]).id
+
+    if @persona.save
+      redirect_to dashboard_path, notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+    else
+      render :new
+    end
+  end
+
   def destroy
     @persona = Persona.find(params[:id])
     @persona.destroy

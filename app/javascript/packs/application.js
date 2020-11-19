@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { initBStepper } from '../plugins/init_b-stepper';
+// import { initBStepper } from '../plugins/init_b-stepper';
 
 
 const validFalseDemo = (e) => {
@@ -50,5 +50,3 @@ document.addEventListener('turbolinks:load', (e) => {
   //console.log(e)
   validFalseDemo(e);
 });
-
-initBStepper();
