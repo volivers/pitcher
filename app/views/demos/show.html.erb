@@ -12,51 +12,46 @@
       <div class="col-3 mt-5">
         <div id="pitch">
           <h4>Pitch info here:</h4>
-          <% if @pitches.blank? %>
-          <div class="row mt-5">
-          <div class="col-12">
-          <%= link_to 'Create a new pitch', new_demo_pitch_path %>
-
+          <% if @demo.pitches.blank? %>
+            No pitch yet,
+            <%= link_to 'create new pitch', new_demo_pitch_path(@demo) %>.
           <% else %>
-            <% @pitches.each do |pitch| %>
-            <h5>Pain:</h5>
-            <p><%= @pitch.pain %></p>
-            <h5>Target:</h5>
-            <p><%= @pitch.target %></p>
-            <h5>Solution:</h5>
-            <p><%= @pitch.solution %></p>
+            <% @demo.pitches.each do |pitch| %>
+              <h5>Pain:</h5>
+              <p><%= pitch.pain %></p>
+              <h5>Target:</h5>
+              <p><%= pitch.target %></p>
+              <h5>Solution:</h5>
+              <p><%= pitch.solution %></p>
             <% end %>
           <% end %>
-          </div>
-
-
+        </div>
         <div id="personae">
-          <h4>Personae info here:</h4>
-          <% if @personas.blank? %>
-            <div class="row mt-5">
-          <div class="col-12">
-          <%= link_to 'Create a new persona', new_demo_persona_path %>
-          <% else %>
-            <% @personas.each do |persona| %>
-              <h5>Name:</h5>
-              <p><%= @persona.name %></p>
-              <h5>Age:</h5>
-              <p><%= persona.age %></p>
-              <h5>Bio:</h5>
-              <p><%= persona.bio %></p>
-              <h5>Nationality:</h5>
-              <p><%= persona.nationality %></p>
-              <h5>Location:</h5>
-              <p><%= persona.location %></p>
-              <h5>Job:</h5>
-              <p><%= persona.job %></p>
-              <h5>Relationship status:</h5>
-              <p><%= persona.relationship_status %></p>
-              <h5>Income:</h5>
-              <p><%= persona.income %></p>
+          <h4>Persona info here:</h4>
+          <% if @demo.personas.blank? %>
+              No personas yet,
+              <%= link_to 'create a new persona', new_demo_persona_path(@demo) %>.
+            <% else %>
+              <% @demo.personas.each do |persona| %>
+                <h5>Name:</h5>
+                <p><%= persona.name %></p>
+                <h5>Age:</h5>
+                <p><%= persona.age %></p>
+                <h5>Bio:</h5>
+                <p><%= persona.bio %></p>
+                <h5>Nationality:</h5>
+                <p><%= persona.nationality %></p>
+                <h5>Location:</h5>
+                <p><%= persona.location %></p>
+                <h5>Job:</h5>
+                <p><%= persona.job %></p>
+                <h5>Relationship status:</h5>
+                <p><%= persona.relationship_status %></p>
+                <h5>Income:</h5>
+                <p><%= persona.income %></p>
+              <% end %>
+              <%= link_to 'add new persona', new_demo_persona_path(@demo) %>
             <% end %>
-            <p></p>
-          <% end %>
         </div>
       </div>
     </div>
@@ -70,9 +65,9 @@
             class: "btn btn-ghost btn-sm",
               method: :delete,
               data: { confirm: "Are you sure?" } %>
-            </button>
-          </div>
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
