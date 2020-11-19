@@ -1,0 +1,27 @@
+
+
+<%= simple_form_for demo, remote: true do |f| %>
+  <h6>
+    Ready to take the world by storm?
+
+    First, let’s give your demo a name!
+  </h6>
+  <div class="form-inputs">
+    <%= f.error_notification %>
+
+    <%= f.input :name,
+      label: false,
+      required: true,
+      autofocus: true,
+      placeholder: "Awesome Startup Name" %>
+
+    <%= render "#{demo.current_step}_step", pitch: @pitch %>
+  </div>
+
+  <h6 class="text-justify">Once you're done, click the link, below 👇</h6>
+  <div class="form-actions">
+    <%= f.button :submit, "Continue" %>
+    <%= f.button :submit, "Let's go!", class: 'btn btn-primary',  :name => "back_button" unless demo.first_step? %>
+  </div>
+
+<% end %>
