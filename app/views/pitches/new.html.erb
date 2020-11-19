@@ -1,35 +1,41 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
-      <h2 class="mb-4">New Pitch</h2>
-        <%= simple_form_for [@demo, @pitch]  do |f| %>
+  <%= render 'shared/form_header' %>
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-12 col-xs-10 col-lg-7">
+        <%= simple_form_for [@demo, @pitch] do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :pain,
                       as: :text,
                       label: "Pain",
                       required: true,
-                      autofocus: true
+                      autofocus: true,
+                      placeholder: "Taxis suck.",
+                      :input_html => { :rows => 1}
                       %>
 
           <%= f.input :target,
                       as: :text,
                       label: "Target",
                       required: true,
-                      autofocus: true
+                      autofocus: true,
+                      placeholder: "People getting places.",
+                      :input_html => { :rows => 1}
                       %>
-
 
           <%= f.input :solution,
                       as: :text,
                       label: "Solution",
                       required: true,
-                      autofocus: true
+                      autofocus: true,
+                      placeholder: "Private car driving service.",
+                      :input_html => { :rows => 1}
                       %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Create a new pitch", class: 'btn btn-primary w-100 mb-2' %>
+          <%= f.button :submit, "Next", class: 'btn btn-primary' %>
         </div>
       <% end %>
+    </div>
   </div>
 </div>

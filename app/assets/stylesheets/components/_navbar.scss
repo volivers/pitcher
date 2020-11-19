@@ -1,6 +1,14 @@
+
+.navbar {
+    background-color: $angular-black-87;
+  &.dashboard {
+    background-color: $white;
+  }
+}
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $angular-black;
+  color: $white-87;
 }
 
 .navbar-lewagon .navbar-collapse {

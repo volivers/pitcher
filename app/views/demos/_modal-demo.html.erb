@@ -2,18 +2,18 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="demoModalLabel">Hey there <%= @user.first_name %> 👋!</h5>
+            <h2 class="modal-title" id="demoModalLabel">Hey there, <%= @user.first_name %> 👋!</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <%= simple_form_for @demo, remote: true do |f| %>
             <div class="modal-body">
-              <h6>
+              <h2>
                 Ready to take the world by storm?
 
                 First, let’s give your demo a name!
-              </h6>
+              </h2>
               <div class="form-inputs">
                 <%= f.error_notification %>
 
@@ -25,9 +25,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <h6 class="text-justify">Once you're done, click the link, below 👇</h6>
               <div class="form-actions">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Maybe later..</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Maybe later..</button>
                 <%= f.button :submit, "Let's go!", class: 'btn btn-primary' %>
               </div>
             </div>
@@ -35,5 +34,3 @@
         </div>
       </div>
     </div>
-
-<div>by</div>

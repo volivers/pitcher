@@ -1,4 +1,22 @@
 // $max-height: ;
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  color: $primary;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  color: $primary;
+  border: 1px solid transparent;
+  background-color: $angular-black-13;
+}
+
 
 .btn-ghost {
   color: #4A4A4A;
