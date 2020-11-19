@@ -29,6 +29,9 @@ class DemosController < ApplicationController
 
   def show
     @personas = Persona.all
+    @persona = Persona.find(params[:id])
+    @pitches = Pitch.all
+    @pitch = Pitch.find(params[:id])
   end
 
   def edit
