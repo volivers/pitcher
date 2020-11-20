@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initBStepper } from '../plugins/init_b-stepper';
+import { ScrollDepthIndicator } from '../components/scroll_indicator';
 
 
 const validFalseDemo = (e) => {
