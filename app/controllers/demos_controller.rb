@@ -7,6 +7,7 @@ class DemosController < ApplicationController
     @personas = Persona.all
     @demo = Demo.new
     @valid = true
+    # raise
   end
 
   def new
