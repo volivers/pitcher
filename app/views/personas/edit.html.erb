@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
-      <h2 class="mb-4">New persona</h2>
+      <h2 class="mb-4">Update Persona</h2>
 
       <%= simple_form_for [@demo, @persona] do |f| %>
         <div class="form-inputs">
@@ -13,12 +13,11 @@
             <%= f.input :job, placeholder: 'Journalist (full-time)' %>
             <%= f.input :relationship_status, placeholder: "It's complicated" %>
             <%= f.input :income, placeholder: '$80.000' %>
-            <%= hidden_field_tag 'pitch', @pitch.id %>
         </div>
 
         <div class="form-actions d-flex">
-          <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-outline-primary w-100 mb-2 mr-4'} %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary w-100 mb-2' %>
+          <%= f.button :submit, "Update", class: 'btn btn-primary w-100 mb-2 mr-4' %>
+          <%= link_to "Next", :back, {:class=>'btn btn-outline-primary w-100 mb-2'} %>
         </div>
       <% end %>
     </div>
