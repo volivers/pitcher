@@ -1,9 +1,10 @@
 .breadcrumb {
   width: 100%;
-  background-color: $light-gray;
+  background-color: $angular-black;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: sticky;
 }
 
 .breadcrumb-item +.breadcrumb-item::before {

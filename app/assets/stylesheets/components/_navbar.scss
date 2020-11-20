@@ -9,8 +9,8 @@
     color: $angular-black;
   }
 
-  &.pitches.active {
-     > .nav-link {
+  &.pitches, &.personas {
+    a#nav-link {
       color: $white-87;
     }
   }
@@ -41,4 +41,10 @@
   height: 2px;
   background: $primary;
   width: 0%;
+}
+
+
+#greetings {
+  font-family: $font-monospace;
+  font-size: 0.90em;
 }
