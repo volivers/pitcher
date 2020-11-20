@@ -19,8 +19,8 @@
 
 
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: $angular-black-38;
+  border: 1px solid $angular-black-38;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -29,6 +29,7 @@
 }
 
 .btn-ghost:hover {
+  color: $angular-black-38;
   opacity: 1;
 }
 

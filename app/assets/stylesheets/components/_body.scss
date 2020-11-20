@@ -1,20 +1,36 @@
 body {
-    background-color: $angular-black;
-    color: $white-87;
+  background-color: $angular-black;
+  color: $white-87;
 
-    &.pitches {
-      h1, h2, h3, h4, h5, h6 {
-        font-family: $font-monospace;
-        font-weight: 100;
-      }
+  .logo {
+    font-family: $font-display;
+    font-style: 1.5rem;
+    letter-spacing: 0.025rem;
+  }
+
+  &.pitches {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font-monospace;
+      font-weight: 100;
+    }
+
+    .logo {
+      color: $white-87;
+    }
+  }
+
+
+  &.demos {
+    background-color: $white;
+    color: $angular-black-87;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font-display;
     }
 
 
-    &.dashboard {
-      background-color: $white;
-
-      h1, h2, h3, h4, h5, h6 {
-        font-family: $font-display;
-      }
+    .logo {
+      color: $angular-black-87;
     }
+  }
 }

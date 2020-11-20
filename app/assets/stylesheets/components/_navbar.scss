@@ -1,20 +1,25 @@
 
 .navbar {
-    background-color: $angular-black-87;
-  &.dashboard {
+  justify-content: space-between;
+  background-color: $angular-black-87;
+  color: $white-87;
+
+  &.demos {
     background-color: $white;
+    color: $angular-black;
+  }
+
+  &.pitches.active {
+     > .nav-link {
+      color: $white-87;
+    }
   }
 }
-.navbar-lewagon {
-  justify-content: space-between;
-  background: $angular-black;
-  color: $white-87;
-}
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar .navbar-brand img {
   width: 40px;
 }
