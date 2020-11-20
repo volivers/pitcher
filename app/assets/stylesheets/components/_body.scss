@@ -8,6 +8,11 @@ body {
     letter-spacing: 0.025rem;
   }
 
+  .container {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+
   &.pitches {
     h1, h2, h3, h4, h5, h6 {
       font-family: $font-monospace;
