@@ -1,11 +1,17 @@
+.alert-info {
+  position: sticky;
+  top: 0px;
+  width: 500px;
+  right: 20px;
+  z-index: 99;
+}
+
 .alert-container {
   position: fixed;
   bottom: 16px;
   right: 16px;
   z-index: 1000;
 }
-
-
 
 .flash {
   padding: 16px 24px;

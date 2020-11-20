@@ -55,7 +55,7 @@ document.addEventListener('turbolinks:load', (e) => {
 
 
 
-
+$( "#draggable" ).draggable();
 
 
 
