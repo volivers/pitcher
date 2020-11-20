@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-md-4">
-      <h2 class="mb-4">New Pitch</h2>
+      <h2 class="mb-4">Update Pitch</h2>
         <%= simple_form_for [@demo, @pitch]  do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
@@ -28,8 +28,8 @@
                       %>
         </div>
         <div class="form-actions d-flex">
-          <%= link_to "Back", :back, {:class=>'btn btn-outline-primary w-100 mb-2 mr-4'} %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary w-100 mb-2' %>
+          <%= link_to "Back", dashboard_path, {:class=>'btn btn-outline-primary w-100 mb-2 mr-4'} %>
+          <%= f.button :submit, "Update", class: 'btn btn-primary w-100 mb-2' %>
         </div>
       <% end %>
   </div>

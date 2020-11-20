@@ -4,19 +4,40 @@
     <title>Pitcher.</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel='shortcut icon' type='image/x-icon' href='https://icons-for-free.com/iconfiles/png/512/chat+chat+bubble+message+text+icon-1320166863061068764.png' />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    
     <div class="main-container container my-4">
       <%= yield %>
     </div>
+    <% if controller_name == 'personas' && action_name == 'new' %>
+      <%= render 'shared/stepper' %>
+    <% elsif controller_name == 'pitches' && action_name == 'new' %>
+      <%= render 'shared/stepper' %>
+    <% elsif controller_name == 'pitches' && action_name == 'edit' %>
+      <%= render 'shared/stepper' %>
+    <% elsif controller_name == 'personas' && action_name == 'edit' %>
+      <%= render 'shared/stepper' %>
+    <% end %>
     <%= render 'shared/footer' %>
   </body>
+
+  <script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {ScrollDepthIndicator()};
+
+    function ScrollDepthIndicator() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("scrollBar").style.width = scrolled + "%";
+    }
+  </script>
 </html>

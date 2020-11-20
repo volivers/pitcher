@@ -3,14 +3,31 @@ class PersonasController < ApplicationController
 
   def new
     @persona = Persona.new
+    @pitch = Pitch.find(params[:pitch])
   end
 
   def create
     @persona = Persona.new(persona_params)
     @persona.demo_id = Demo.find(params[:demo_id]).id
+    @pitch = Pitch.find(params[:pitch])
 
     if @persona.save
       redirect_to dashboard_path, notice: 'Yay! 🎉 Your persona was successfully added. Check it out 👇'
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @persona = Persona.find(params[:id])
+  end
+
+  def update
+    @persona.update(persona_params)
+    @persona.demo_id = Demo.find(params[:demo_id]).id
+
+    if @persona.save
+      redirect_to dashboard_path, notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
     else
       render :new
     end

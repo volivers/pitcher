@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// import { initBStepper } from '../plugins/init_b-stepper';
 
 
 const validFalseDemo = (e) => {
@@ -47,16 +47,6 @@ const validFalseDemo = (e) => {
 document.addEventListener('turbolinks:load', (e) => {
   // Call your functions here, e.g:
   // initSelect2();
-
   //console.log(e)
-
   validFalseDemo(e);
 });
-
-
-
-
-
-
-
-
