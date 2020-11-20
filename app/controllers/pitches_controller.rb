@@ -33,7 +33,13 @@ class PitchesController < ApplicationController
     @pitch.demo = @demo
 
     if @pitch.save
-      redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+      if session[:last_page] == "dashboard"
+        session[:last_page] = ""
+        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      else
+        session[:last_page] = ""
+        redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      end
     else
       render :partial => 'modal-pitch'
     end
