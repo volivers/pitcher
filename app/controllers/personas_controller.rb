@@ -3,7 +3,11 @@ class PersonasController < ApplicationController
 
   def new
     @persona = Persona.new
-    @pitch = Pitch.find(params[:pitch])
+    if params[:pitch].present?
+      @pitch = Pitch.find(params[:pitch])
+    else
+      @pitch = @demo.pitches.first
+    end
   end
 
   def create

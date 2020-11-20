@@ -39,3 +39,12 @@ body {
     }
   }
 }
+
+
+.inactive {
+  color: $angular-black-13;
+  pointer-events: none;
+  &:hover {
+    color: $angular-black-13;
+  }
+}

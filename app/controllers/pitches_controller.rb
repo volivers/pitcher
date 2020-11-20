@@ -44,10 +44,6 @@ class PitchesController < ApplicationController
     @personas = Persona.all
   end
 
-  def edit ;end
-
-  def update ;end
-
   def destroy
     if @pitch.destroy
       redirect_to dashboard_path, notice: 'Yay! ❌ Your pitch was successfully deleted.'
