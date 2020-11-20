@@ -31,7 +31,7 @@
                           <% end %>
                         <% else %>
                           <%= link_to new_demo_pitch_path(demo), class: "dropdown-item" do %>
-                            Add Pitch
+                            Start Building
                           <% end %>
                         <% end %>
                         <% if demo.pitches.any? %>
@@ -41,8 +41,10 @@
                                 Edit <%= persona.name %>
                               <% end %>
                             <% end %>
-                            <%= link_to new_demo_persona_path(demo), class: "dropdown-item" do %>
-                              Add Persona
+                            <% if demo.personas.count <= 1 %>
+                              <%= link_to new_demo_persona_path(demo), class: "dropdown-item" do %>
+                                Add Persona
+                              <% end %>
                             <% end %>
                           <% else %>
                             <%= link_to new_demo_persona_path(demo), class: "dropdown-item" do %>
@@ -60,7 +62,9 @@
                           <h6><%= demo.pitches.first.pain %></h6>
                         <% end %>
                         <% if demo.personas.any? %>
-                          <h6><%= demo.personas.first.name %></h6>
+                          <% demo.personas.each do |persona| %>
+                            <h6><i class="far fa-user"></i> <%= persona.name %></h6>
+                            <% end %>
                         <% end %>
                         <h3><%= demo.name %></h3>
                       </div>
