@@ -15,7 +15,7 @@ class PitchesController < ApplicationController
   def create
     @pitch = Pitch.new(pitch_params)
     @pitch.demo_id = Demo.find(params[:demo_id]).id
-    @pitch.user = current_user
+    # @pitch.user = current_user
 
     if @pitch.save
       redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
@@ -44,11 +44,9 @@ class PitchesController < ApplicationController
     @personas = Persona.all
   end
 
-  def edit
-  end
+  def edit ;end
 
-  def update
-  end
+  def update ;end
 
   def destroy
     if @pitch.destroy
@@ -57,7 +55,6 @@ class PitchesController < ApplicationController
       render :show
     end
   end
-
 
   private
 

@@ -29,8 +29,8 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 4px;
-  background: #ccc;
+  height: 2px;
+  background: $white-38;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -38,7 +38,7 @@
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-  height: 4px;
-  background: $green;
+  height: 2px;
+  background: $primary;
   width: 0%;
 }

@@ -14,21 +14,21 @@
     }
 
     .avatar-triangle {
-      border-bottom: 26px solid $primary-87;
+      border-bottom: 24px solid $primary-87;
     }
   }
 
   .avatar-square {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 0px;
   background-color: $white-87;
   transition: background-color .2s ease-in;
 }
 
   .avatar-circle {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50px;
     background-color: $white-87;
     transition: background-color .2s ease-in;
@@ -39,7 +39,7 @@
     height: 0;
     border-left: 13px solid transparent;
     border-right: 13px solid transparent;
-    border-bottom: 26px solid $white-87;
+    border-bottom: 24px solid $white-87;
     transition: border-bottom .2s ease-in;
   }
 }
@@ -60,7 +60,7 @@ body {
         }
 
         .avatar-triangle {
-          border-bottom: 26px solid $primary-87;
+          border-bottom: 24px solid $primary-87;
         }
       }
     }
