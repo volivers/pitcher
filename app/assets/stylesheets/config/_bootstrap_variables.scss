@@ -4,14 +4,29 @@
 // 3. You can override them below!
 
 // General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+
+
+$font-family-sans-serif:  $font-base;
+$font-family-monospace:   $font-monospace;
+// stylelint-enable value-keyword-case
+
+
+
+$font-family-base:        $font-base;
+$font-family-code:        $font-monospace;
+$headings-font-family:    $font-display;
+$btn-font-family:         $font-base;
+$input-font-family:       $font-monospace;
+// $input-btn-font-family: null !default;
+$form-select-font-family: $font-base;
+
+$body-bg:                 $angular-black;
 $font-size-base: 1rem;
 
+
 // Colors
-$body-color: $gray;
-$primary:    $green;
+$body-color: $white-87;
+$primary:    $lilac;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
@@ -23,3 +38,16 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+
+// Override Color Gradding
+$primary-87: rgba($primary, 0.87);
+$primary-60: rgba($primary, 0.60);
+$primary-38: rgba($primary, 0.38);
+$primary-13: rgba($primary, 0.13);
+$primary-0: rgba($primary, 0);
+
+
+
+// Override Line Height
+$headings-line-height: 1.5;

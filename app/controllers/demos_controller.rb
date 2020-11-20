@@ -3,7 +3,7 @@ class DemosController < ApplicationController
   before_action :find_demo, except: %i[dashboard new create]
 
   def dashboard
-    @demos = Demo.all
+    @demos = Demo.all.order(created_at: :desc)
     @personas = Persona.all
     @demo = Demo.new
     @valid = true

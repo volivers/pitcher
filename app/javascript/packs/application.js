@@ -50,3 +50,4 @@ document.addEventListener('turbolinks:load', (e) => {
   //console.log(e)
   validFalseDemo(e);
 });
+

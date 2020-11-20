@@ -1,3 +1,11 @@
+.alert-info {
+  position: sticky;
+  top: 0px;
+  width: 500px;
+  right: 20px;
+  z-index: 99;
+}
+
 .alert-container {
   position: fixed;
   bottom: 16px;
@@ -15,6 +23,16 @@
   border-radius: 4px;
   margin: 8px;
 }
+
+.flash-success {
+  background-color: $white-87;
+  color: $angular-black;
+  border-color: $white-60;
+  max-width: 300px;
+  min-height: 300px;
+}
+
+
 
 .flash-success {
   border: 2px solid #1EDD88;

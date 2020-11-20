@@ -1,9 +1,13 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,600;1,300;1,600&display=swap');
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$font-display: 'Red Hat Display', sans-serif;
+$font-monospace: 'Roboto Mono', monospace;
+$font-base: 'Roboto', sans-serif;
+
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +18,16 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+
+// $input-btn-font-family: null !default;
+// $input-font-family: $input-btn-font-family !default;
+// $form-select-font-family: $input-font-family !default;
+
+
+// $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// // stylelint-enable value-keyword-case
+// $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
+// $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
+
