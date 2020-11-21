@@ -27,27 +27,16 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { ScrollDepthIndicator } from '../components/scroll_indicator';
+import { demoTooltip } from '../components/tooltip';
+import { validFalseDemo } from '../components/modal';
 
-
-const validFalseDemo = (e) => {
-  //let dashboardPage = document.querySelector('.demos.dashboard');
-  let modalExists = document.querySelector('#demoModal')
-
-  if(modalExists) {
-    let demoValid = modalExists.dataset.valid;
-    console.log("HEY!!", demoValid)
-    if(demoValid == 'false') {
-      let button = document.getElementById('buttonModal');
-      button.click();
-    }
-  }
-
-}
 
 document.addEventListener('turbolinks:load', (e) => {
   // Call your functions here, e.g:
   // initSelect2();
   //console.log(e)
   validFalseDemo(e);
+  ScrollDepthIndicator(e);
+  demoTooltip(e);
 });
 
