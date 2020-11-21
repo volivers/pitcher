@@ -39,4 +39,3 @@ document.addEventListener('turbolinks:load', (e) => {
   ScrollDepthIndicator(e);
   demoTooltip(e);
 });
-
