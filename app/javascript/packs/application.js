@@ -29,6 +29,7 @@ import "bootstrap";
 import { ScrollDepthIndicator } from '../components/scroll_indicator';
 import { demoTooltip } from '../components/tooltip';
 import { validFalseDemo } from '../components/modal';
+import { PreloaderInit } from '../components/preloader';
 
 
 document.addEventListener('turbolinks:load', (e) => {
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', (e) => {
   // initSelect2();
   //console.log(e)
   validFalseDemo(e);
-  ScrollDepthIndicator(e);
   demoTooltip(e);
+  // PreloaderInit(e);
+  ScrollDepthIndicator(e);
 });

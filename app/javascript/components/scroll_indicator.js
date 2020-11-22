@@ -1,4 +1,3 @@
-// When the user scrolls the page, execute ScrollDepthIndicator
 window.onscroll = function() {ScrollDepthIndicator()};
 
 function ScrollDepthIndicator() {
