@@ -16,6 +16,11 @@
     position: relative;
     color: $angular-black-87;
     border: 1px solid rgba($angular-black-87, 0.25);
+    transition: transform .3s ease-in;
+
+    &:hover {
+      transform: scale(1.01);
+    }
 
     h1,h2,h3,h4,h5,h6 {
       margin-top: 0;
@@ -106,10 +111,11 @@
   border-radius: 2px;
   font-weight: lighter;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease-in;
   justify-content: center;
 
   &:hover {
+    transform: scale(1.01);
     opacity: 1;
   }
 
@@ -121,6 +127,10 @@
     display: flex;
     justify-content: center;
     box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    transition: transform .3s ease-in;
+    &:hover {
+      transform: scale(1.04);
+    }
   }
 }
 
