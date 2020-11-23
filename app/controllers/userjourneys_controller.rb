@@ -1,5 +1,5 @@
 class UserjourneysController < ApplicationController
-  before_action :set_userjourney, only: [:show, :edit]
+  before_action :set_userjourney, only: [:show, :edit, :destroy, :update]
   before_action :set_demo, except: [:destroy]
   before_action :set_persona, only: [:new]
 
@@ -32,10 +32,17 @@ class UserjourneysController < ApplicationController
   end
 
   def update
+    @userjourney.update(userjourney_params)
+    @userjourney.demo = @demo
+    @userjourney.persona = @persona
+    if @userjourney.save
+      redirect_to demo_userjourney_path(@demo, @userjourney), notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
+    else
+      render :new
+    end
   end
 
   def destroy
-    @userjourney = Userjourney.find(params[:id])
     @userjourney.destroy
     redirect_to dashboard_path, notice: 'Yay! 🎉 Your userjourney was successfully removed.'
   end

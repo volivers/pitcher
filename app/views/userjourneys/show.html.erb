@@ -8,6 +8,11 @@
       <h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>
     </div>
     <div class="col-12">
+      <% for @step in @userjourney.steps %>
+        <p><%= @step.standpoint %></p>
+        <p><%= @step.viewpoint %></p>
+        <p><%= @step.actionpoint %></p>
+      <% end %>
       <% @userjourney.steps.each do |step| %>
         <p><%= step.standpoint %></p>
         <p><%= step.viewpoint %></p>
