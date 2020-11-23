@@ -14,8 +14,8 @@
     <%# <%= render 'shared/preloader' %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    
-    <div class="main-container container my-4">
+
+    <div class="main-container container">
       <%= yield %>
     </div>
     <% if controller_name == 'personas' && action_name == 'new' %>

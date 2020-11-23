@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
 
 
-  # get 'personas/new'
-  # get 'personas/create'
-  # get 'personas/destroy'
-  # get 'users/dashboard'
-  # get 'demos/dashboard'
-  # get 'demos/new'
-  # get 'demos/create'
-  # get 'demos/show'
-  # get 'demos/edit'
-  # get 'demos/update'
-
   devise_for :users
   root to: 'demos#dashboard'
 
