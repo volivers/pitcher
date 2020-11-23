@@ -2,8 +2,8 @@ class PersonasController < ApplicationController
   before_action :set_demo, except: [:destroy]
 
   def new
-    session[:last_page] = action_name
     @persona = Persona.new
+
     if params[:pitch].present?
       @pitch = Pitch.find(params[:pitch])
     else
@@ -15,9 +15,14 @@ class PersonasController < ApplicationController
     @persona = Persona.new(persona_params)
     @persona.demo_id = Demo.find(params[:demo_id]).id
     @pitch = Pitch.find(params[:pitch])
-
     if @persona.save
-      redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      if params[:from] == "dashboard"
+        params[:from] = ""
+        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      else
+        params[:from] = ""
+        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+      end
     else
       render :new
     end

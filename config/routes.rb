@@ -1,19 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'steps/index'
-  get 'steps/new'
-  get 'steps/create'
-  get 'steps/edit'
-  get 'steps/update'
-  get 'steps/destroy'
-  get 'userjourneys/index'
-  get 'userjourneys/new'
-  get 'userjourneys/create'
-  get 'userjourneys/show'
-  get 'userjourneys/edit'
-  get 'userjourneys/update'
-  get 'userjourneys/destroy'
   devise_for :users
   root to: 'demos#dashboard'
 

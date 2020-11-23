@@ -26,7 +26,7 @@
                           View
                         <% end %>
                         <% if demo.pitches.any? %>
-                          <%= link_to edit_demo_pitch_path(demo, demo.pitches.first), class: "dropdown-item" do %>
+                          <%= link_to edit_demo_pitch_path(demo, demo.pitches.first, from: @from), class: "dropdown-item" do %>
                             Edit Pitch
                           <% end %>
                         <% else %>
