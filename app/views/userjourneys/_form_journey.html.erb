@@ -1,6 +1,8 @@
 <%= simple_form_for [@demo, @userjourney] do |f| %>
   <%= f.input :name %>
-  <%= f.hidden_field :persona_id, value: @persona.id %>
+  <% if action_name == "new" %>
+    <%= f.hidden_field :persona_id, value: @persona.id %>
+  <% end %>
   <h3>Steps</h3>
   <div id='steps'>
     <%= f.simple_fields_for :steps do |step| %>
@@ -10,5 +12,6 @@
       <%= link_to_add_association 'add step', f, :steps %>
     </div>
   </div>
-  <%= f.submit 'Save' %>
+  <%= f.submit 'Generate user flow', class: 'btn btn-primary' %>
+  <%#= f.button :submit, "Next", class: 'btn btn-primary' %>
 <% end %>

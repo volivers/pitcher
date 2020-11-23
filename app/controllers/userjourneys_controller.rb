@@ -1,14 +1,14 @@
 class UserjourneysController < ApplicationController
-  # before_action :set_userjourney, except: [:new]
+  before_action :set_userjourney, only: [:show, :edit]
   before_action :set_demo, except: [:destroy]
-  # before_action :set_persona, except: [:new, :destroy]
+  before_action :set_persona, only: [:new]
 
   def index
   end
 
   def new
     @userjourney = Userjourney.new
-    @persona = Persona.find(params[:persona_id])
+    # @persona = Persona.find(params[:persona_id])
   end
 
   def create
@@ -17,16 +17,18 @@ class UserjourneysController < ApplicationController
     @userjourney.persona = Persona.find(params[:userjourney][:persona_id])
 
     if @userjourney.save
-      redirect_to dashboard_path, notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
+      redirect_to demo_userjourney_path(@demo, @userjourney), notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
     else
       render :new
     end
   end
 
   def show
+    @steps = Step.all
   end
 
   def edit
+    # @userjourney.persona = Persona.find(params[:userjourney][:persona_id])
   end
 
   def update
@@ -41,7 +43,7 @@ class UserjourneysController < ApplicationController
   private
 
   def userjourney_params
-    params.require(:userjourney).permit(:name, :demo_id, :persona_id, tasks_attributes: %i[id standpoint viewpoint actionpoint _destroy])
+    params.require(:userjourney).permit(:name, :demo_id, :persona_id, steps_attributes: %i[id standpoint viewpoint actionpoint _destroy])
   end
 
   def set_userjourney
@@ -49,7 +51,7 @@ class UserjourneysController < ApplicationController
   end
 
   def set_persona
-    @persona = Persona.find(params[:persona])
+    @persona = Persona.find(params[:persona_id])
   end
 
   def set_demo

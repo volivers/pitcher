@@ -1,2 +1,17 @@
-<h1>Userjourneys#show</h1>
-<p>Find me in app/views/userjourneys/show.html.erb</p>
+  <div class="row d-flex justify-content-center">
+    <div class="header-form col-12">
+      <h6><%= @demo.name %></h6>
+      <h1 class="mb-5">
+        This is
+        <%= @userjourney.persona.name %>'s <%= @userjourney.name %> User Flow
+      </h1>
+      <h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>
+    </div>
+    <div class="col-12">
+      <% @userjourney.steps.each do |step| %>
+        <p><%= step.standpoint %></p>
+        <p><%= step.viewpoint %></p>
+        <p><%= step.actionpoint %></p>
+      <% end %>
+    </div>
+  </div>
