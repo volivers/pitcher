@@ -33,9 +33,14 @@
                       %>
         </div>
         <div class="form-actions d-flex">
-          <%= link_to "Back", :back, {:class=>'btn btn-primary'} %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary' %>
+          <%= link_to "Back", :back, :class=>'btn btn-primary', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Add a new demo' %>
+          <%= f.button :submit, "Next", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'HELLO' %>
         </div>
       <% end %>
     </div>
   </div>
+
+<button type="button" id ="hidden-button" class="d-none btn btn-primary" data-toggle="modal" data-target="#onboarding">
+  Launch demo modal
+</button>
+

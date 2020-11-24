@@ -4,14 +4,14 @@
         <div class="col-7 col-lg-10">
           <div class="cards-demo">
              <a type="button" id="buttonModal" class="btn btn-demo" data-toggle="modal" data-target="#demoModal">
-              <div class="circle"  data-placement="bottom" title="Add a new demo">
+              <div class="circle" data-toggle="tooltip" data-placement="bottom" title="Add a new demo">
                 <%= image_tag "icons/add.svg" %>
               </div>
             </a>
             <% if @demos.any? %>
               <% @demos.each do |demo| %>
-                <div class="card-demo-container">
-                  <div class="card-demo">
+                <div class="card-demo-container" >
+                  <div class="card-demo" data-controller="tooltip" data-placement="top" data-tippy-content="Add a new demo">
                     <div class="card-demo-top dropdown">
                       <a class="card-demo-actions dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-v small"></i>

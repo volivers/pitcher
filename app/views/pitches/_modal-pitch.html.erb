@@ -1,26 +1,22 @@
-<!-- Button trigger modal -->
-<div id="app" data-controller="test">
-    <button data-action="click->test#launchTest" class="btn btn-primary">Launch modal</button>
+
 
 <!-- Modal -->
-<div class="modal" data-controller="modal" data-target="test.modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="onboarding" tabindex="-1" role="dialog" aria-labelledby="onboardingTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <i class="fas fa-map-marker-alt"></i>
-        <h2 class="modal-title" style="text-align: center" id="pitchModalLabel">Onboarding</h2>
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Body 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+          <%= render 'onboarding' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-action="click->modal#close">SKIP</button>
-        <button type="button" class="btn btn-primary">NEXT</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-</div>
 </div>

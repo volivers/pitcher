@@ -8,6 +8,7 @@ export default class extends Controller {
             this.modalTarget,
             "modal"
         );
+        console.log("Hello")
         modalController.open();
     }
 }

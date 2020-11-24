@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("stimulus").start()
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,12 +24,12 @@ require("stimulus").start()
 
 // External imports
 import "bootstrap";
+import "controllers"
+
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
-const application = Application.start()
-const context = require.context("./controllers", true, /\.js$/)
-application.load(definitionsFromContext(context))
+
 
 // Internal imports, e.g:
 import { ScrollDepthIndicator } from '../components/scroll_indicator';
@@ -46,7 +46,38 @@ document.addEventListener('turbolinks:load', (e) => {
   demoTooltip(e);
   // PreloaderInit(e);
   ScrollDepthIndicator(e);
+
+
+  let onboard = document.querySelector('#onboard');
+  let pitchNew = document.querySelector('.pitches.new')
+  if (pitchNew) {
+    let modalBtn = document.querySelector('#hidden-button')
+    modalBtn.click()
+
+    if(onboard) {
+        let nextBtn = documentQuerySelector('#next')
+        let backBtn = documentQuerySelector('#next')
+        // disable back button when opening the modal
+
+        //
+        nextBtn.addEventListener('click', () => {
+          // which one is actiive (class contains 'active')
+
+          // check the
+        });
+
+        backBtn.addEventListener('click', () => {
+
+        });
+    }
+  }
+
+
+
+
 });
+
+
 
 
 
