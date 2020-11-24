@@ -1,5 +1,11 @@
 
 .simple_form {
+  .form-control {
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $white-87;
+  }
   .form-inputs {
     .form-group {
 
@@ -9,12 +15,15 @@
       }
       .form-control {
         padding: 1rem 2rem;
-        background-color: $white-87;
+        background-color: transparent !important;
+        border: 0;
+        border-bottom: 1px solid $white-87;
       }
 
       input, textarea {
         border-radius: 50px;
       }
+
     }
   }
   .form-actions {

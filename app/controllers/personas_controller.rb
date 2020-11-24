@@ -1,9 +1,10 @@
 class PersonasController < ApplicationController
   before_action :set_demo, except: [:destroy]
+  before_action :set_persona, only: [:edit, :update]
 
   def new
-    session[:last_page] = action_name
     @persona = Persona.new
+
     if params[:pitch].present?
       @pitch = Pitch.find(params[:pitch])
     else
@@ -15,29 +16,35 @@ class PersonasController < ApplicationController
     @persona = Persona.new(persona_params)
     @persona.demo_id = Demo.find(params[:demo_id]).id
     @pitch = Pitch.find(params[:pitch])
-
     if @persona.save
-      redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      if params[:from] == "dashboard"
+        params[:from] = ""
+        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      else
+        params[:from] = ""
+        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+      end
     else
       render :new
     end
   end
 
   def edit
-    @persona = Persona.find(params[:id])
+    # but here it reads... params[:from] is nil……why?!
   end
 
   def update
     @persona.update(persona_params)
     @persona.demo_id = Demo.find(params[:demo_id]).id
-
+    # params[:from] is nil……why?!
     if @persona.save
-      if session[:last_page] == "dashboard"
-        session[:last_page] = ""
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      if params[:from] == "dashboard"
+        params[:from] = ""
+        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+        # TODO:fix redirect redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       else
-        session[:last_page] = ""
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+        params[:from] = ""
+        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
       end
     else
       render :new
@@ -54,6 +61,10 @@ class PersonasController < ApplicationController
 
   def persona_params
     params.require(:persona).permit(:name, :age, :bio, :nationality, :location, :job, :relationship_status, :income, :demo_id)
+  end
+
+  def set_persona
+    @persona = Persona.find(params[:id])
   end
 
   def set_demo

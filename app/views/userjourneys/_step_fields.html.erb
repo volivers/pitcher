@@ -1,0 +1,23 @@
+<div class='nested-fields'>
+    <% if action_name == "new" %>
+      <span><%= @persona.name %> is </span>
+    <% else %>
+      <span><%#= @userjourney.persona.name %> is </span>
+    <% end %>
+    <%= f.input :standpoint %>
+    <span> and sees </span>
+    <%= f.input :viewpoint %>
+    <% if action_name == "new" %>
+      <span>, <%= @persona.name %> then </span>
+    <% else %>
+      <span>, <%#= @userjourney.persona.name %> then </span>
+    <% end %>
+    <%= f.input :actionpoint %><span class="">.</span>
+    <%= link_to_remove_association f , class: "btn btn-demo d-flex align-items-end", type: "button", id: "buttonModal",  data: {toggle:"modal", target:"#demoModal"} do %>
+      <div class="circle circle-sm circle-white" data-toggle="tooltip" data-placement="bottom" title="Delete a step">
+        <%= image_tag "icons/delete.svg" %>
+      </div>
+    <% end %>
+</div>
+
+
