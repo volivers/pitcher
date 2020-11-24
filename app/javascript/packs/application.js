@@ -36,6 +36,7 @@ import { ScrollDepthIndicator } from '../components/scroll_indicator';
 import { demoTooltip } from '../components/tooltip';
 import { validFalseDemo } from '../components/modal';
 import { PreloaderInit } from '../components/preloader';
+import { onboardingModal } from '../components/onboarding_modal.js';
 
 
 document.addEventListener('turbolinks:load', (e) => {
@@ -47,33 +48,7 @@ document.addEventListener('turbolinks:load', (e) => {
   // PreloaderInit(e);
   ScrollDepthIndicator(e);
 
-
-  let onboard = document.querySelector('#onboard');
-  let pitchNew = document.querySelector('.pitches.new')
-  if (pitchNew) {
-    let modalBtn = document.querySelector('#hidden-button')
-    modalBtn.click()
-
-    if(onboard) {
-        let nextBtn = documentQuerySelector('#next')
-        let backBtn = documentQuerySelector('#next')
-        // disable back button when opening the modal
-
-        //
-        nextBtn.addEventListener('click', () => {
-          // which one is actiive (class contains 'active')
-
-          // check the
-        });
-
-        backBtn.addEventListener('click', () => {
-
-        });
-    }
-  }
-
-
-
+  onboardingModal()
 
 });
 

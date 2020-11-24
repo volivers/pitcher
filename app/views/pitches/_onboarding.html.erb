@@ -1,25 +1,25 @@
-<nav id="onboard" aria-label="...">
-  <div class="step1 active">
-    STEP 1
-  </div>
-  <div class="step2 d-none">
-    STEP 2
-  </div>
-  <div class="step3 d-none">
-    STEP 3
-  </div>
 
 
-  <ul class="pagination pagination-lg">
+<nav id="onboard-pitch" aria-label="...">
+    <div class="step1">
+      <p>I'll show you how to describe your pain</p>
+    </div>
+    <div class="step2 d-none">
+      <p>Now I'll teach how to describe your perfect target user</p>
+    </div>
+    <div class="step3 d-none">
+      <p>This is the last step of a perfect pitch: we'll think about the solution</p>
+    </div>
+
+  <ul class="pagination pagination-sm">
     <li class="page-item">
-      <a class="page-link" id="back" href="#">Back</a>
+      <span class="page-link active" id="step1" href="#">Step 1</span>
     </li>
     <li class="page-item">
-      <a class="page-link" id="next" href="#">Next</a>
+      <span class="page-link" id="step2" href="#">Step 2</span>
     </li>
-
     <li class="page-item">
-      <a class="page-link" id="next" href="#">Next</a>
+      <span  class="page-link" id="step3" href="#">Step 3</span>
     </li>
 
   </ul>
@@ -28,3 +28,13 @@
 </nav>
 
 
+<style>
+  .active {
+    background-color: green;
+  }
+
+  #onboarding {
+    height: 80px
+    width: 140px
+  }
+</style>
