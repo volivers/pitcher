@@ -17,8 +17,14 @@
       </div>
 
       <div class="form-actions d-flex">
-        <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-primary back-btn'} %>
-        <%= f.button :submit, "Next", class: 'btn btn-primary next-btn' %>
+        <% if params[:from] == "dashboard" %>
+          <%= link_to "Back", dashboard_path, {:class=>'btn btn-primary back-btn'} %>
+        <% else %>
+          <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-primary back-btn'} %>
+        <% end %>
+
+        <%= f.button :submit, "Save", class: 'btn btn-primary next-btn' %>
+        <%= f.button :submit, "Save and Continue", class: 'btn btn-primary next-btn' %>
       </div>
     <% end %>
   </div>

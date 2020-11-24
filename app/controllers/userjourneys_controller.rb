@@ -26,12 +26,42 @@ class UserjourneysController < ApplicationController
 
   def show
     @steps = Step.all
+    @viewpoint_dictionary = {
+      listings: ["list", "index", "grid"],
+      details: ["details", "overview", "profile"],
+      items: ["options", "items", "offers"],
+      payment: ["payment", "checkout", "basket"],
+      notification: ["alert", "popup", "modal", "window", "notification", "message"]
+    }
+    # @viewpoint_dictionary = {
+    #   dashboard: ["dashboard"],
+    #   setting: ["settings"],
+    #   lists: ["list", "grid", "items"],
+    #   pricing: ["pricing"],
+    #   details: ["details", "overview", "profile"],
+    #   article: ["post", "blog", "article"],
+    #   banners: ["banner", "section"],
+    #   forms: ["form", "survey", ""],
+    #   media: ["player", "video"],
+    #   search: ["search bar", "search"],
+    #   payment: ["payment", "checkout", "basket"],
+    #   buttons: ["selects", "clicks", "cancel", "submit", "add", "upload", "dowload", "order", "create", "button", "join","sign-up","sign"],
+    #   alerts: ["popup", "modal", "window", "notification"],
+    #   maps: ["map", "plan", "chart"],
+    #   charts: ["chart", "stats"],
+    #   images: ["image", "photo", "picture"],
+    #   text: ["description", "text"],
+    #   headings: ["heading", "header", "title"],
+    #   image_groups: ["carousel", "grid"],
+    #   preloading: ["preloading", "splash", "spinner"]
+    # }
+    # @view_dictionary = ["home", "index"]
   end
 
   def edit
-    @persona = Persona.find(params[:persona_id])
-    @persona.name = @userjourney.persona.name
-    #@userjourney.persona = Persona.find(params[:userjourney][:persona_id])
+    # @persona = Persona.find(params[:persona_id])
+    # @persona.name = @userjourney.persona.name
+    # @userjourney.persona = Persona.find(params[:userjourney][:persona_id])
   end
 
   def update

@@ -1,11 +1,5 @@
 <%= render 'shared/side_menu' %>
-<div class="row d-flex justify-content-center">
-  <div class="header-form col-12">
-    <h6><%= @demo.name %></h6>
-    <h1 class="mb-5">Update your <%= controller_name %></h1>
-    <h6 class="info">Please fill in the form to update your <%= controller_name %></h6>
-  </div>
-</div>
+<%= render 'shared/form_header' %>
 <div class="row mt-5 d-flex justify-content-center">
   <div class="col-12 col-xs-10 col-lg-7">
 
@@ -22,8 +16,9 @@
       </div>
 
       <div class="form-actions d-flex">
-        <%= link_to "Cancel", :back, {:class=>'btn btn-primary next-btn'} %>
+        <%= link_to "Back", :back, {:class=>'btn btn-primary next-btn'} %>
         <%= f.button :submit, "Update", class: 'btn btn-primary back-btn' %>
+        <%= f.button :submit, "Next Step", class: 'btn btn-primary back-btn' %>
       </div>
     <% end %>
   </div>

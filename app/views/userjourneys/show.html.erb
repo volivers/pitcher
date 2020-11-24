@@ -7,16 +7,46 @@
       </h1>
       <h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>
     </div>
+  </div>
+  <div class="row d-flex justify-content-center mt-5">
     <div class="col-12">
-      <% for @step in @userjourney.steps %>
-        <p><%= @step.standpoint %></p>
-        <p><%= @step.viewpoint %></p>
-        <p><%= @step.actionpoint %></p>
-      <% end %>
-      <% @userjourney.steps.each do |step| %>
-        <p><%= step.standpoint %></p>
-        <p><%= step.viewpoint %></p>
-        <p><%= step.actionpoint %></p>
-      <% end %>
+      <div class="steps-container">
+        <% i = 0 %>
+        <% @userjourney.steps.each do |step| %>
+          <div class="step step-<%= i += 1 %>">
+            <div class="standpoint">
+              <div class="backdrop" data-standpoint="<%= step.standpoint %>">
+                <%= image_tag "ui-components/backdrop.png" %>
+              </div>
+              <div class="container">
+                <h6><%= step.standpoint %></h6>
+                <small><%= step.viewpoint %></small>
+                <% viewpoint_words = step.viewpoint.split %>
+                <% viewpoint_words.each do |word| %>
+                <% @viewpoint_dictionary[:listings].include? word
+                  word
+                %>
+                  <div class="list" data-viewpoint="<%= step.viewpoint %>">
+                    <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                    <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                    <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                    <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                    <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                    <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="actionpoint">
+              <p><%= step.actionpoint %> → </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
+  </div>
+  <div class="row d-flex justify-content-center mt-5">
+    <%= link_to edit_demo_userjourney_path(@demo, @userjourney.id, from: @from), class: "btn btn-primary" do %>
+      Edit <%= @userjourney.persona.name %>'s <%= @userjourney.name %> Journey
+    <% end %>
   </div>

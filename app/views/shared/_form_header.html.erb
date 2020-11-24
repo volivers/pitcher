@@ -1,4 +1,5 @@
-  <div class="row d-flex justify-content-center">
+<% if action_name == "new" %>
+    <div class="row d-flex justify-content-center">
     <div class="header-form col-12">
       <h6><%= @demo.name %></h6>
       <h1 class="mb-5">
@@ -11,3 +12,13 @@
       <h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>
     </div>
   </div>
+<% else %>
+  <div class="row d-flex justify-content-center">
+    <div class="header-form col-12">
+      <h6><%= @demo.name %></h6>
+      <h1 class="mb-5">
+        Update your <%= controller_name %></h1>
+      <h6 class="info">Please fill in the form to update your <%= controller_name %></h6>
+    </div>
+  </div>
+<% end %>
