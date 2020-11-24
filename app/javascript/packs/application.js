@@ -27,18 +27,29 @@ require("@nathanvda/cocoon")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { ScrollDepthIndicator } from '../components/scroll_indicator';
+import { scrollDepthIndicator } from '../components/scroll_indicator';
 import { demoTooltip } from '../components/tooltip';
 import { validFalseDemo } from '../components/modal';
-import { PreloaderInit } from '../components/preloader';
+// import { PreloaderInit } from '../components/preloader';
+import { stepperToggle } from '../components/stepper';
+import { sidebarToggle } from '../components/sidemenu';
 
+const pitchNew = document.querySelector('.pitches.new');
+const pitchEdit = document.querySelector('.pitches.edit');
+const personaNew = document.querySelector('.personas.new');
+const personaEdit = document.querySelector('.personas.edit');
 
 document.addEventListener('turbolinks:load', (e) => {
   // Call your functions here, e.g:
-  // initSelect2();
-  //console.log(e)
   validFalseDemo(e);
   demoTooltip(e);
   // PreloaderInit(e);
-  ScrollDepthIndicator(e);
+  scrollDepthIndicator(e);
+  if (pitchNew || pitchEdit) {
+    sidebarToggle(e);
+    stepperToggle(e);
+  } else if (personaNew || personaEdit) {
+    sidebarToggle(e);
+    stepperToggle(e);
+  };
 });
