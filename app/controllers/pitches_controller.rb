@@ -10,12 +10,14 @@ class PitchesController < ApplicationController
 
   def new
     @pitch = Pitch.new
+    @user = current_user
   end
 
   def create
     @pitch = Pitch.new(pitch_params)
     @pitch.demo_id = Demo.find(params[:demo_id]).id
-    # @pitch.user = current_user
+    @user = current_user
+    @user.first_name = current_user.first_name
 
     if @pitch.save
       redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
