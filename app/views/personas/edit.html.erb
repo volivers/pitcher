@@ -1,30 +1,31 @@
-  <div class="row d-flex justify-content-center">
-    <div class="header-form col-12">
-      <h6><%= @demo.name %></h6>
-      <h1 class="mb-5">Update your <%= controller_name %></h1>
-      <h6 class="info">Please fill in the form to update your <%= controller_name %></h6>
-    </div>
+<%= render 'shared/side_menu' %>
+<div class="row d-flex justify-content-center">
+  <div class="header-form col-12">
+    <h6><%= @demo.name %></h6>
+    <h1 class="mb-5">Update your <%= controller_name %></h1>
+    <h6 class="info">Please fill in the form to update your <%= controller_name %></h6>
   </div>
-  <div class="row mt-5 d-flex justify-content-center">
-    <div class="col-12 col-xs-10 col-lg-7">
+</div>
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-12 col-xs-10 col-lg-7">
 
-      <%= simple_form_for [@demo, @persona] do |f| %>
-        <div class="form-inputs">
-            <%= f.input :name, placeholder: 'Robin Scherbatsky' %>
-            <%= f.input :age, placeholder: '28' %>
-            <%= f.input :bio, placeholder: 'Tell more about Robin' %>
-            <%= f.input :nationality, placeholder: 'Canadian' %>
-            <%= f.input :location, placeholder: 'New York, US' %>
-            <%= f.input :job, placeholder: 'Journalist (full-time)' %>
-            <%= f.input :relationship_status, placeholder: "It's complicated" %>
-            <%= f.input :income, placeholder: '$80.000' %>
-        </div>
+    <%= simple_form_for [@demo, @persona] do |f| %>
+      <div class="form-inputs">
+          <%= f.input :name, placeholder: 'Robin Scherbatsky' %>
+          <%= f.input :age, placeholder: '28' %>
+          <%= f.input :bio, placeholder: 'Tell more about Robin' %>
+          <%= f.input :nationality, placeholder: 'Canadian' %>
+          <%= f.input :location, placeholder: 'New York, US' %>
+          <%= f.input :job, placeholder: 'Journalist (full-time)' %>
+          <%= f.input :relationship_status, placeholder: "It's complicated" %>
+          <%= f.input :income, placeholder: '$80.000' %>
+      </div>
 
-        <div class="form-actions d-flex">
-          <%= f.button :submit, "Update", class: 'btn btn-primary' %>
-          <%= link_to "Next", :back, {:class=>'btn btn-primary'} %>
-        </div>
-      <% end %>
-    </div>
+      <div class="form-actions d-flex">
+        <%= f.button :submit, "Update", class: 'btn btn-primary back-btn' %>
+        <%= link_to "Next", :back, {:class=>'btn btn-primary next-btn'} %>
+      </div>
+    <% end %>
   </div>
+</div>
 </div>

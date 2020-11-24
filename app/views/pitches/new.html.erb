@@ -1,40 +1,41 @@
-  <%= render 'shared/form_header' %>
-  <div class="row mt-5 d-flex justify-content-center">
-    <div class="col-12 col-xs-10 col-lg-7">
-        <%= simple_form_for [@demo, @pitch] do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :pain,
-                      as: :text,
-                      label: "Pain",
-                      required: true,
-                      autofocus: true,
-                      placeholder: "Taxis suck.",
-                      :input_html => { :rows => 1}
-                      %>
+<%= render 'shared/side_menu' %>
+<%= render 'shared/form_header' %>
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-12 col-xs-10 col-lg-7">
+      <%= simple_form_for [@demo, @pitch] do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :pain,
+                    as: :text,
+                    label: "Pain",
+                    required: true,
+                    autofocus: true,
+                    placeholder: "Taxis suck.",
+                    :input_html => { :rows => 1}
+                    %>
 
-          <%= f.input :target,
-                      as: :text,
-                      label: "Target",
-                      required: true,
-                      autofocus: true,
-                      placeholder: "People getting places.",
-                      :input_html => { :rows => 1}
-                      %>
+        <%= f.input :target,
+                    as: :text,
+                    label: "Target",
+                    required: true,
+                    autofocus: true,
+                    placeholder: "People getting places.",
+                    :input_html => { :rows => 1}
+                    %>
 
-          <%= f.input :solution,
-                      as: :text,
-                      label: "Solution",
-                      required: true,
-                      autofocus: true,
-                      placeholder: "Private car driving service.",
-                      :input_html => { :rows => 1}
-                      %>
-        </div>
-        <div class="form-actions d-flex">
-          <%= link_to "Back", :back, {:class=>'btn btn-primary'} %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-    </div>
+        <%= f.input :solution,
+                    as: :text,
+                    label: "Solution",
+                    required: true,
+                    autofocus: true,
+                    placeholder: "Private car driving service.",
+                    :input_html => { :rows => 1}
+                    %>
+      </div>
+      <div class="form-actions d-flex">
+        <%= link_to "Back", :back, {:class=>'btn btn-primary back-btn'} %>
+        <%= f.button :submit, "Next", class: 'btn btn-primary next-btn' %>
+      </div>
+    <% end %>
   </div>
+</div>
