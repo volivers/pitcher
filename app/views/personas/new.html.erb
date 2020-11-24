@@ -1,25 +1,26 @@
-  <%= render 'shared/form_header' %>
-  <div class="row mt-5 d-flex justify-content-center">
-    <div class="col-12 col-xs-10 col-lg-7">
+<%= render 'shared/side_menu' %>
+<%= render 'shared/form_header' %>
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-12 col-xs-10 col-lg-7">
 
-      <%= simple_form_for [@demo, @persona] do |f| %>
-        <div class="form-inputs">
-            <%= f.input :name, placeholder: 'Robin Scherbatsky' %>
-            <%= f.input :age, placeholder: '28' %>
-            <%= f.input :bio, placeholder: 'Tell more about Robin' %>
-            <%= f.input :nationality, placeholder: 'Canadian' %>
-            <%= f.input :location, placeholder: 'New York, US' %>
-            <%= f.input :job, placeholder: 'Journalist (full-time)' %>
-            <%= f.input :relationship_status, placeholder: "It's complicated" %>
-            <%= f.input :income, placeholder: '$80.000' %>
-            <%= hidden_field_tag 'pitch', @pitch.id %>
-        </div>
+    <%= simple_form_for [@demo, @persona] do |f| %>
+      <div class="form-inputs">
+          <%= f.input :name, placeholder: 'Robin Scherbatsky' %>
+          <%= f.input :age, placeholder: '28' %>
+          <%= f.input :bio, placeholder: 'Tell more about Robin' %>
+          <%= f.input :nationality, placeholder: 'Canadian' %>
+          <%= f.input :location, placeholder: 'New York, US' %>
+          <%= f.input :job, placeholder: 'Journalist (full-time)' %>
+          <%= f.input :relationship_status, placeholder: "It's complicated" %>
+          <%= f.input :income, placeholder: '$80.000' %>
+          <%= hidden_field_tag 'pitch', @pitch.id %>
+      </div>
 
-        <div class="form-actions d-flex">
-          <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-primary'} %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-    </div>
+      <div class="form-actions d-flex">
+        <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-primary back-btn'} %>
+        <%= f.button :submit, "Next", class: 'btn btn-primary next-btn' %>
+      </div>
+    <% end %>
   </div>
+</div>
 
