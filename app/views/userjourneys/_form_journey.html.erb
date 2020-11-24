@@ -5,13 +5,18 @@
   <% end %>
   <h3>Steps</h3>
   <div id='steps'>
+    <% @i = 1 %>
     <%= f.simple_fields_for :steps do |step| %>
       <%= render 'step_fields', :f => step %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'add step', f, :steps %>
+      <%= link_to_add_association f, :steps , class: "btn btn-demo d-flex align-items-end" do %>
+        <div class="circle circle-sm" data-toggle="tooltip" data-placement="bottom" title="Add a new step">
+          <%= image_tag "icons/add.svg" %>
+        </div>
+      <% end %>
     </div>
-  </div>
+  <%= link_to "Back", :back, {:class=>'btn btn-primary'} %>
   <%= f.submit 'Generate user flow', class: 'btn btn-primary' %>
   <%#= f.button :submit, "Next", class: 'btn btn-primary' %>
 <% end %>

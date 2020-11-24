@@ -17,6 +17,53 @@
   background-color: $angular-black-13;
 }
 
+.btn-demo {
+  background-color: rgba($angular-black, 0.05);
+  border: 1px solid rgba($angular-black-87, 0.25);
+  padding: 20px;
+  border-radius: 2px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(1.01);
+    opacity: 1;
+  }
+
+  .circle {
+    background-color: $primary;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    transition: transform .3s ease-in;
+
+    &:hover {
+      transform: scale(1.02);
+      }
+    }
+
+  .circle-sm {
+    width: 32px;
+    height: 32px;
+  }
+
+  .circle-primary {
+    background-color: $primary;
+  }
+
+  .circle-black {
+    background-color: $angular-black-60;
+  }
+
+  .circle-white {
+    background-color: $white-60;
+  }
+}
 
 .btn-ghost {
   color: $angular-black-38;

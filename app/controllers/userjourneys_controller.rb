@@ -15,7 +15,8 @@ class UserjourneysController < ApplicationController
     @userjourney = Userjourney.new(userjourney_params)
     @userjourney.demo = @demo
     @userjourney.persona = Persona.find(params[:userjourney][:persona_id])
-
+    @persona = Persona.find(params[:userjourney][:persona_id])
+    @persona.name = @userjourney.persona.name
     if @userjourney.save
       redirect_to demo_userjourney_path(@demo, @userjourney), notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
     else
@@ -28,7 +29,9 @@ class UserjourneysController < ApplicationController
   end
 
   def edit
-    # @userjourney.persona = Persona.find(params[:userjourney][:persona_id])
+    @persona = Persona.find(params[:persona_id])
+    @persona.name = @userjourney.persona.name
+    #@userjourney.persona = Persona.find(params[:userjourney][:persona_id])
   end
 
   def update
