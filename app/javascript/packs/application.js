@@ -44,11 +44,14 @@ document.addEventListener('turbolinks:load', (e) => {
   demoTooltip(e);
   // PreloaderInit(e);
   scrollDepthIndicator(e);
-  if (pitchNew || pitchEdit) {
-    sidebarToggle(e);
-    stepperToggle(e);
-  } else if (personaNew || personaEdit) {
-    sidebarToggle(e);
-    stepperToggle(e);
-  };
+  sidebarToggle(e);
+  stepperToggle(e);
+  bannerInit(e);
+  // if (pitchNew || pitchEdit) {
+  //   sidebarToggle(e);
+  //   stepperToggle(e);
+  // } else if (personaNew || personaEdit) {
+  //   sidebarToggle(e);
+  //   stepperToggle(e);
+  // };
 });

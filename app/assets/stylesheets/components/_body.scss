@@ -13,6 +13,14 @@ body {
     margin-bottom: 4rem;
   }
 
+  &.home {
+    .container {
+      margin: 0;
+      padding: 0;
+      max-width: 100vw;
+    }
+  }
+
   &.pitches, &.personas {
     h1, h2, h3, h4, h5, h6 {
       font-family: $font-monospace;
@@ -24,6 +32,11 @@ body {
     }
   }
 
+  // &.home {
+  //   h1 {
+  //     font-family: $font-monospace;
+  //   }
+  // }
 
   &.demos {
     background-color: $white;

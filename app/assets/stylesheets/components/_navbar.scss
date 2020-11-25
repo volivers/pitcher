@@ -9,6 +9,11 @@
     color: $angular-black;
   }
 
+  &.pages {
+    background-color: $white;
+    color: $angular-black;
+  }
+
   &.pitches, &.personas {
     a#nav-link {
       color: $white-87;
