@@ -22,62 +22,32 @@
 
       .component-container {
         position: absolute;
-        top: 20%;
+        top: 15%;
         padding: 1rem;
 
         .grids-component {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-gap: 2px;
 
-          .grid-item {
-            max-height: 100%;
-            min-width: 100%;
-            object-fit: cover;
-            vertical-align: bottom;
+          .grids-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 2px;
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem;
 
-            img {
-              max-width: 100%;
+            .grid-item {
               max-height: 100%;
-
-              &:hover {
-                transform: scale(1.02);
-                cursor: pointer;
-              }
-            }
-          }
-        }
-
-        .notifications-component {
-          display: flex;
-          justify-content: center;
-
-          position: relative;
-
-          .backdrop {
-            img {
-              max-width: 100%;
-              max-height: 100%;
-            }
-          }
-
-          .notifications-container {
-            position: absolute;
-            top: 25%;
-
-            .notification-item {
-
-              margin-top: 0.5rem;
-              margin-bottom: 0.5rem;
-
-              &.button:hover {
-                transform: scale(1.02);
-                cursor: pointer;
-              }
+              min-width: 100%;
+              object-fit: cover;
+              vertical-align: bottom;
 
               img {
                 max-width: 100%;
                 max-height: 100%;
+
+                &:hover {
+                  transform: scale(1.02);
+                  cursor: pointer;
+                }
               }
             }
           }
@@ -101,6 +71,30 @@
                 max-width: 100%;
                 max-height: 100%;
               }
+            }
+          }
+        }
+
+        .details-component {
+
+          .details-container {
+
+            .detail-item {
+
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+
+              img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+
+              &.button:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+              }
+
+
             }
           }
         }
@@ -130,6 +124,40 @@
             }
           }
         }
+
+
+        .notifications-component {
+          display: flex;
+          justify-content: center;
+
+          position: relative;
+
+          .backdrop {
+            img {
+              max-width: 100%;
+              max-height: 100%;
+            }
+          }
+
+          .notifications-container {
+
+            .notification-item {
+
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+
+              &.button:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+              }
+
+              img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -138,6 +166,12 @@
       color: $white-38;
       padding: 1rem
     }
+  }
+    .page-header {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      }
   }
 }
 
