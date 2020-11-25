@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_173754) do
+ActiveRecord::Schema.define(version: 2020_11_23_130555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,26 @@ ActiveRecord::Schema.define(version: 2020_11_17_173754) do
     t.index ["demo_id"], name: "index_pitches_on_demo_id"
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.string "standpoint"
+    t.string "viewpoint"
+    t.string "actionpoint"
+    t.bigint "userjourney_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["userjourney_id"], name: "index_steps_on_userjourney_id"
+  end
+
+  create_table "userjourneys", force: :cascade do |t|
+    t.bigint "demo_id", null: false
+    t.bigint "persona_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.index ["demo_id"], name: "index_userjourneys_on_demo_id"
+    t.index ["persona_id"], name: "index_userjourneys_on_persona_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -67,4 +87,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_173754) do
   add_foreign_key "demos", "users"
   add_foreign_key "personas", "demos"
   add_foreign_key "pitches", "demos"
+  add_foreign_key "steps", "userjourneys"
+  add_foreign_key "userjourneys", "demos"
+  add_foreign_key "userjourneys", "personas"
 end

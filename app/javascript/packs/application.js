@@ -7,7 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+require("jquery")
+require("@nathanvda/cocoon")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,12 +25,21 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
+
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+
 
 // Internal imports, e.g:
 import { scrollDepthIndicator } from '../components/scroll_indicator';
 import { demoTooltip } from '../components/tooltip';
 import { validFalseDemo } from '../components/modal';
 // import { PreloaderInit } from '../components/preloader';
+
+import { onboardingModal } from '../components/onboarding_modal.js';
+
 import { stepperToggle } from '../components/stepper';
 import { sidebarToggle } from '../components/sidemenu';
 
@@ -43,6 +53,7 @@ document.addEventListener('turbolinks:load', (e) => {
   validFalseDemo(e);
   demoTooltip(e);
   // PreloaderInit(e);
+  onboardingModal();
   scrollDepthIndicator(e);
   sidebarToggle(e);
   stepperToggle(e);

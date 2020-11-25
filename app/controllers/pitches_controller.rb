@@ -10,12 +10,12 @@ class PitchesController < ApplicationController
 
   def new
     @pitch = Pitch.new
+
   end
 
   def create
     @pitch = Pitch.new(pitch_params)
     @pitch.demo_id = Demo.find(params[:demo_id]).id
-    # @pitch.user = current_user
 
     if @pitch.save
       redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
@@ -24,20 +24,17 @@ class PitchesController < ApplicationController
     end
   end
 
-  def edit
-    @pitch = Pitch.find(params[:id])
-  end
+  def edit; end
 
   def update
     @pitch.update(pitch_params)
     @pitch.demo = @demo
-
     if @pitch.save
-      if session[:last_page] == "dashboard"
-        session[:last_page] = ""
+      if params[:from] == "dashboard"
+        params[:from] = ""
         redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       else
-        session[:last_page] = ""
+        params[:from] = ""
         redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end
     else

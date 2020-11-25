@@ -7,7 +7,8 @@ class DemosController < ApplicationController
     @personas = Persona.all
     @demo = Demo.new
     @valid = true
-    session[:last_page] = action_name
+    # session[:last_page] = action_name
+    @from = action_name
   end
 
   def new

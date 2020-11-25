@@ -10,8 +10,8 @@
             </a>
             <% if @demos.any? %>
               <% @demos.each do |demo| %>
-                <div class="card-demo-container">
-                  <div class="card-demo">
+                <div class="card-demo-container" >
+                  <div class="card-demo" data-controller="tooltip" data-placement="top" data-tippy-content="View more info">
                     <div class="card-demo-top dropdown">
                       <a class="card-demo-actions dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-v small"></i>
@@ -26,7 +26,7 @@
                           View
                         <% end %>
                         <% if demo.pitches.any? %>
-                          <%= link_to edit_demo_pitch_path(demo, demo.pitches.first), class: "dropdown-item" do %>
+                          <%= link_to edit_demo_pitch_path(demo, demo.pitches.first, from: @from), class: "dropdown-item" do %>
                             Edit Pitch
                           <% end %>
                         <% else %>
@@ -34,21 +34,34 @@
                             Start Building
                           <% end %>
                         <% end %>
+
                         <% if demo.pitches.any? %>
                           <% if demo.personas.any? %>
                             <% demo.personas.each do |persona| %>
-                              <%= link_to edit_demo_persona_path(demo, persona.id), class: "dropdown-item" do %>
+                              <%= link_to edit_demo_persona_path(demo, persona.id, from: @from), class: "dropdown-item" do %>
                                 Edit <%= persona.name %>
                               <% end %>
                             <% end %>
                             <% if demo.personas.count <= 1 %>
-                              <%= link_to new_demo_persona_path(demo), class: "dropdown-item" do %>
+                              <%= link_to new_demo_persona_path(demo, from: @from), class: "dropdown-item" do %>
                                 Add Persona
                               <% end %>
                             <% end %>
                           <% else %>
-                            <%= link_to new_demo_persona_path(demo), class: "dropdown-item" do %>
+                            <%= link_to new_demo_persona_path(demo, from: @from), class: "dropdown-item" do %>
                               Add Persona
+                            <% end %>
+                          <% end %>
+                        <% end %>
+
+                        <% if demo.personas.any? %>
+                          <% demo.personas.each do |persona| %>
+                            <% if persona.userjourneys.any? %>
+                              <% persona.userjourneys.each do |userjourney| %>
+                                <%= link_to edit_demo_userjourney_path(demo, userjourney.id, from: @from), class: "dropdown-item" do %>
+                                  Edit <%= persona.name %>'s <%= userjourney.name %> Journey
+                                <% end %>
+                              <% end %>
                             <% end %>
                           <% end %>
                         <% end %>

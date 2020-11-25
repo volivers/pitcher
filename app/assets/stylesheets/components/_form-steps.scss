@@ -1,0 +1,38 @@
+.nested-fields {
+  display: flex;
+
+  span {
+    font-family: $font-monospace;
+    color: $white-60;
+    white-space: pre-wrap;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .form-group {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    label {
+      font-size: .875rem;
+      color: $white-38;
+
+    }
+    .form-control {
+      background-color: #121212;
+      border-radius: 50px;
+      border: 0;
+
+      &:focus {
+
+      }
+    }
+
+    input {
+      color: $white-87;
+      padding: 1rem 1rem;
+    }
+  }
+}

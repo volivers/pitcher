@@ -13,7 +13,7 @@
           <h4>Pitch info here:</h4>
           <% if @demo.pitches.blank? %>
             No pitch yet,
-            <%= link_to 'create new pitch', new_demo_pitch_path(@demo) %>.
+            <%= link_to 'create new pitch', new_demo_pitch_path(@demo) %>
           <% else %>
             <% @demo.pitches.each do |pitch| %>
               <h5>Pain:</h5>
@@ -29,7 +29,7 @@
           <h4>Persona info here:</h4>
           <% if @demo.personas.blank? %>
               No personas yet,
-              <%= link_to 'create a new persona', new_demo_persona_path(@demo) %>.
+              <%= link_to 'create a new persona', new_demo_persona_path(@demo) %>
             <% else %>
               <% @demo.personas.each do |persona| %>
                 <h5>Name:</h5>
@@ -58,7 +58,7 @@
       <div class="col-12">
         <%= link_to 'Take me to my Dashboard', dashboard_path %>
         <div class="m-4 text-center">
-          <button type="button" class="btn">
+          <button type="button" class="btn" data-controller="tooltip" data-placement="top" data-tippy-content="Delete this project" >
             <%= link_to "Delete #{@demo.name}",
             demo_path(@demo),
             class: "btn btn-ghost btn-sm",
