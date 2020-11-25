@@ -9,11 +9,11 @@ body {
   }
 
   .container {
-    margin-top: 6rem;
+    margin-top: 4rem;
     margin-bottom: 4rem;
   }
 
-  &.pitches, &.personas {
+  &.pitches, &.personas, &.userjourneys {
     h1, h2, h3, h4, h5, h6 {
       font-family: $font-monospace;
       font-weight: 100;

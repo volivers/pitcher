@@ -16,10 +16,13 @@
     position: relative;
     color: $angular-black-87;
     border: 1px solid rgba($angular-black-87, 0.25);
-    transition: transform .3s ease-in;
+    transition: box-shadow .3s ease-in-out;
 
     &:hover {
-      transform: scale(1.01);
+      // transform: scale(1.01);
+      -webkit-box-shadow: 0px 5px 30px 0px rgba(187, 134, 252, 0.2);
+      -moz-box-shadow: 0px 5px 30px 0px rgba(187, 134, 252, 0.2);
+      box-shadow: 0px 5px 30px 0px rgba(187, 134, 252, 0.2);
     }
 
     h1,h2,h3,h4,h5,h6 {
@@ -104,36 +107,6 @@
 
 }
 
-.btn-demo {
-  background-color: rgba($angular-black, 0.05);
-  border: 1px solid rgba($angular-black-87, 0.25);
-  padding: 20px;
-  border-radius: 2px;
-  font-weight: lighter;
-  opacity: 1;
-  transition: all 0.3s ease-in;
-  justify-content: center;
-
-  &:hover {
-    transform: scale(1.01);
-    opacity: 1;
-  }
-
-  .circle {
-    background-color: $primary;
-    border-radius: 50px;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
-    transition: transform .3s ease-in;
-    &:hover {
-      transform: scale(1.04);
-    }
-  }
-}
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .card-demo {
@@ -176,7 +149,8 @@
   justify-content: flex-end;
   align-items: flex-start;
   flex-direction: column;
-  transition: transform .3s ease-in;
+  transition: box-shadow .3s ease-in-out;
+
     a {
       margin-left: 10px;
     }
@@ -192,5 +166,8 @@
 }
 
 #demo-explorer:hover {
-  transform: scale(1.02);
+  // transform: scale(1.02);
+  -webkit-box-shadow: 0px 5px 30px 0px rgba(187, 134, 252, 0.2);
+  -moz-box-shadow: 0px 5px 30px 0px rgba(187, 134, 252, 0.2);
+  box-shadow: 0px 5px 30px 0px rgba(187, 134, 252, 0.2);
 }

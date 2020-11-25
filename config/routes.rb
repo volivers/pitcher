@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-
-  # get 'personas/new'
-  # get 'personas/create'
-  # get 'personas/destroy'
-  # get 'users/dashboard'
-  # get 'demos/dashboard'
-  # get 'demos/new'
-  # get 'demos/create'
-  # get 'demos/show'
-  # get 'demos/edit'
-  # get 'demos/update'
-
   devise_for :users
   root to: 'demos#dashboard'
 
@@ -22,5 +10,8 @@ Rails.application.routes.draw do
   resources :demos, except: [:index] do
     resources :pitches, only: [:new, :create, :edit, :update]
     resources :personas
+    resources :userjourneys do
+      resources :steps
+    end
   end
 end

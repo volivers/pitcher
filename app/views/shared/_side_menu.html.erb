@@ -1,0 +1,51 @@
+<div id="sidebar" class="sidebar">
+  <h4><%= @demo.name %></h4>
+  <% if controller_name == 'personas' && action_name == 'new' %>
+      <h4>Pitch:</h4>
+      <% if @pitch.present? %>
+          <p><%= @pitch.pain %><br>
+          <%= @pitch.target %><br>
+          <%= @pitch.solution %></p>
+      <% end %>
+      <h4>Persona:</h4>
+  <% elsif controller_name == 'pitches' && action_name == 'new' %>
+      <h4>Pitch:</h4>
+  <% elsif controller_name == 'pitches' && action_name == 'edit' %>
+      <h4>Pitch:</h4>
+      <% if @pitch.present? %>
+          <p><%= @pitch.pain %><br>
+          <%= @pitch.target %><br>
+          <%= @pitch.solution %></p>
+      <h4>Persona:</h4>
+      <% elsif @persona.present? %>
+          <p><%= @persona.name %><br>
+          <%= @persona.age %><br>
+          <%= @persona.bio %><br>
+          <%= @persona.nationality %><br>
+          <%= @persona.location %><br>
+          <%= @persona.job %><br>
+          <%= @persona.relationship_status %><br>
+          <%= @persona.income %></p>
+      <% end %>
+  <% elsif controller_name == 'personas' && action_name == 'edit' %>
+      <h4>Pitch:</h4>
+      <% if @pitch.present? %>
+          <p><%= @pitch.pain %><br>
+          <%= @pitch.target %><br>
+          <%= @pitch.solution %></p>
+      <h4>Persona:</h4>
+      <% elsif @persona.present? %>
+          <p><%= @persona.name %><br>
+          <%= @persona.age %><br>
+          <%= @persona.bio %><br>
+          <%= @persona.nationality %><br>
+          <%= @persona.location %><br>
+          <%= @persona.job %><br>
+          <%= @persona.relationship_status %><br>
+          <%= @persona.income %></p>
+      <% end %>
+  <% end %>
+</div>
+
+<button class="btn-sidemenu">&#9776;</button>
+
