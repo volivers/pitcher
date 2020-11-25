@@ -57,6 +57,7 @@ document.addEventListener('turbolinks:load', (e) => {
   sidebarToggle(e);
   stepperToggle(e);
   onboardingModal(e);
+  bannerInit(e);
   // if (pitchNew || pitchEdit) {
   //   sidebarToggle(e);
   //   stepperToggle(e);

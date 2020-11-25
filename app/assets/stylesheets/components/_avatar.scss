@@ -44,7 +44,7 @@
   }
 }
 body {
-  &.demos {
+  &.demos,.pages {
     .avatar-wrapper {
       .avatar-triangle {
         border-bottom: 24px solid $angular-black-87;
