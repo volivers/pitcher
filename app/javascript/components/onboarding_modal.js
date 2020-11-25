@@ -81,14 +81,16 @@ const onboardingModal = () => {
         let step1 = document.querySelector('#step1')
         let step2 = document.querySelector('#step2')
         let step3 = document.querySelector('#step3')
+        let step4 = document.querySelector('#step4')
 
-        let steps = [step1, step2, step3]
+        let steps = [step1, step2, step3, step4]
 
         let content1 = document.querySelector('#onboard .step1')
         let content2 = document.querySelector('#onboard .step2')
         let content3 = document.querySelector('#onboard .step3')
+        let content4 = document.querySelector('#onboard .step4')
 
-        let contents = [content1, content2, content3]
+        let contents = [content1, content2, content3, content4]
 
         steps.forEach((step) => {
 
