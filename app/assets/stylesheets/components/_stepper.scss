@@ -13,18 +13,20 @@
 
 .breadcrumb-item {
   opacity: 0.6;
+
+  &.active {
+    opacity: 1;
+    font-weight: 600;
+    background-color: transparent;
+  }
+  a:hover {
+    text-decoration: none;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+  }
+
 }
 
-.breadcrumb-item a:hover {
-  text-decoration: none;
-  opacity: 1;
-  transition: all 0.3s ease-in;
-}
-
-.breadcrumb-item.active {
-  opacity: 1;
-  font-weight: 600;
-}
 
 .circle-marker {
   height: 30px;

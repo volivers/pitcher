@@ -3,22 +3,31 @@
     <div class="header-form col-12">
       <h6><%= @demo.name %></h6>
       <h1 class="mb-5">
-        Create a new <%= controller_name %>
-        <% if params[:persona_id] %>
-          for <%= @persona.name %>
+        <% if controller_name == "pitches" %>
+          Create your <%= @demo.name %> Pitch</h1>
+        <% elsif controller_name == "personas" %>
+          How's your <%= @demo.name %> app for? Describe your Primary/Secundary Audience.
+        <% elsif controller_name == "userjourneys" %>
+          Create <%= @persona.name %> <%= controller_name %>
         <% end %>
-
-        </h1>
-      <h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>
+      </h1>
+      <!--<h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>-->
     </div>
   </div>
 <% else %>
   <div class="row d-flex justify-content-center">
     <div class="header-form col-12">
       <h6><%= @demo.name %></h6>
+
       <h1 class="mb-5">
-        Update your <%= controller_name %></h1>
-      <h6 class="info">Please fill in the form to update your <%= controller_name %></h6>
+        <% if controller_name == "pitches" %>
+          Update your <%= @demo.name %> Pitch</h1>
+        <% elsif controller_name == "personas" %>
+          Update <%= @persona.name %> <%= controller_name %></h1>
+        <% elsif controller_name == "userjourneys" %>
+          Update <%= @userjourney.persona.name %> <%= controller_name %></h1>
+        <% end %>
+      <!--<h6 class="info">Please fill in the form to update your <%= controller_name %></h6>-->
     </div>
   </div>
 <% end %>

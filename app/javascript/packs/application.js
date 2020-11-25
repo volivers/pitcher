@@ -56,6 +56,7 @@ document.addEventListener('turbolinks:load', (e) => {
   scrollDepthIndicator(e);
   sidebarToggle(e);
   stepperToggle(e);
+  onboardingModal(e);
   bannerInit(e);
   onboardingModal(e);
   // if (pitchNew || pitchEdit) {

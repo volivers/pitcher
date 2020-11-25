@@ -2,3 +2,16 @@
   <div class="row mt-5 d-flex justify-content-center">
       <%= render 'form_journey' %>
   </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="m-4 text-center">
+        <button type="button" class="btn" data-controller="tooltip" data-placement="top" data-tippy-content="Delete this journey" >
+          <%= link_to "Delete #{@userjourney.name} Journey",
+          demo_userjourney_path(@demo, @userjourney),
+          class: "btn btn-ghost-white btn-sm",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        </button>
+      </div>
+    </div>
+  </div>
