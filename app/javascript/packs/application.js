@@ -53,10 +53,10 @@ document.addEventListener('turbolinks:load', (e) => {
   validFalseDemo(e);
   demoTooltip(e);
   // PreloaderInit(e);
-  onboardingModal();
   scrollDepthIndicator(e);
   sidebarToggle(e);
   stepperToggle(e);
+  onboardingModal(e);
   // if (pitchNew || pitchEdit) {
   //   sidebarToggle(e);
   //   stepperToggle(e);
