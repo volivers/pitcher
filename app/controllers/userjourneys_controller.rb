@@ -27,12 +27,13 @@ class UserjourneysController < ApplicationController
   def show
     @steps = Step.all
     @viewpoint_dictionary = {
-      listings: ["list", "index", "grid"],
+      grids: ["list", "index", "grid"],
       details: ["details", "overview", "profile"],
-      items: ["options", "items", "offers"],
+      listings: ["options", "items", "offers"],
       payment: ["payment", "checkout", "basket"],
       notification: ["alert", "popup", "modal", "window", "notification", "message"],
-      banners: ["banner", "section"]
+      banners: ["banner", "section"],
+      search: ["search", "searches"]
     }
     # @viewpoint_dictionary = {
     #   dashboard: ["dashboard"],

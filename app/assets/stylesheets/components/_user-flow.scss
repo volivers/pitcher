@@ -3,6 +3,8 @@
   display: flex;
   font-family: $font-monospace;
 
+  overflow: scroll;
+
   .step {
 
     display: flex;
@@ -12,21 +14,23 @@
       position: relative;
       width: 360px;
 
-      .backdrop {
-
+      .backdrop-component {
+        img {
+          height: 70vh;
+        }
       }
 
       .component-container {
         position: absolute;
-        top: 0;
+        top: 20%;
 
-        .list-component {
+        .grids-component {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 2px;
           padding: 2rem;
 
-          .list-item {
+          .grid-item {
             max-height: 100%;
             min-width: 100%;
             object-fit: cover;
@@ -44,7 +48,7 @@
           }
         }
 
-        .notification-component {
+        .notifications-component {
           display: flex;
           justify-content: center;
 
@@ -57,11 +61,32 @@
             }
           }
 
-          .notification-container {
+          .notifications-container {
             position: absolute;
             top: 25%;
 
             .notification-item {
+
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+
+              &.button:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+              }
+
+              img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+
+        .listings-component {
+          .listings-container {
+
+            .listing-item {
 
               margin-top: 0.5rem;
               margin-bottom: 0.5rem;

@@ -15,37 +15,64 @@
         <% @userjourney.steps.each do |step| %>
           <div class="step step-<%= i += 1 %>">
             <div class="standpoint">
-              <div class="backdrop" data-standpoint="<%= step.standpoint %>">
+              <h6><%= step.standpoint %></h6>
+              <small><%= step.viewpoint %></small>
+              <div class="backdrop-component" data-standpoint="<%= step.standpoint %>">
                 <%= image_tag "ui-components/backdrop.svg" %>
               </div>
               <div class="component-container">
-                <h6><%= step.standpoint %></h6>
-                <small><%= step.viewpoint %></small>
                 <% viewpoint_words = step.viewpoint.split %>
                 <% viewpoint_words.each do |word| %>
-                  <% @viewpoint_dictionary[:listings].include? word%>
-                    <div class="list-component" data-viewpoint="<%= step.viewpoint %>">
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
-                      <div class="list-item"><%= image_tag "ui-components/card-item.png" %></div>
+                  <% if @viewpoint_dictionary[:grids].include? word%>
+                    <div class="grids-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
+                      <div class="grid-item"><%= image_tag "ui-components/card-item.svg" %></div>
                     </div>
-                  <% @viewpoint_dictionary[:notification].include? word %>
-                  <div class="notification-component" data-viewpoint="<%= step.viewpoint %>">
-                    <div class="backdrop" data-standpoint="<%= step.standpoint %>">
-                      <%= image_tag "ui-components/backdrop-notification.png" %>
+                  <% end %>
+                  <% if @viewpoint_dictionary[:notification].include? word %>
+                    <div class="notifications-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="backdrop" data-standpoint="<%= step.standpoint %>">
+                        <%= image_tag "ui-components/backdrop-notification.png" %>
+                      </div>
+                      <div class="notifications-container">
+                        <div class="notification-item"><%= image_tag "ui-components/subtitle-1.svg"%></div>
+                        <div class="notification-item"><%= image_tag "ui-components/body-multiline.svg"%></div>
+                        <div class="notification-item button"><%= image_tag "ui-components/button.svg"%></div>
+                      </div>
                     </div>
-                    <div class="notification-container">
-                      <div class="notification-item"><%= image_tag "ui-components/header.svg"%></div>
-                      <div class="notification-item"><%= image_tag "ui-components/body-multiline.svg"%></div>
-                      <div class="notification-item button"><%= image_tag "ui-components/button.svg"%></div>
+                  <% end %>
+                  <% if @viewpoint_dictionary[:listings].include? word %>
+                    <div class="listings-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="listings-container">
+                        <div class="listing-item"><%= image_tag "ui-components/heading-6.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/button.svg"%></div>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
+                  <% if @viewpoint_dictionary[:payment].include? word %>
+                    <div class="listings-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="listings-container">
+                        <div class="listing-item"><%= image_tag "ui-components/heading-6.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/label.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/label.svg"%></div>
+                        <div class="listing-item button"><%= image_tag "ui-components/button.svg"%></div>
+                      </div>
+                    </div>
+                  <% end %>
                 <% end %>
               </div>
             </div>
