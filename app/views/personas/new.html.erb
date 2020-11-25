@@ -19,7 +19,7 @@
         <!-- CANCEL : WORKING -->
         <%= link_to "Cancel", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
         <!-- SAVE & EXIT : NOT WORKING. SEE CONTROLLER -->
-        <%= f.button :submit, "Save & Exit", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
+        <%= f.button :submit, "Save", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
         <!-- ADD NEW PERSONA : COUNT IS WORKING || BUT POST IS NOT WORKING. SEE CONTROLLER -->
         <% if @demo.personas.count < 2 %>
           <button type="button" class="btn" data-controller="tooltip" data-tippy-content="Save and add a new persona" >

@@ -16,36 +16,37 @@
       </div>
 
       <div class="form-actions d-flex">
-        <%= link_to "Back", :back, {:class=>'btn btn-primary next-btn'} %>
-        <%= f.button :submit, "Update", class: 'btn btn-primary back-btn' %>
-      </div>
-      <div class="form-actions d-flex">
         <!-- CANCEL : WORKING -->
         <%= link_to "Cancel", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
         <!-- SAVE & EXIT : NOT WORKING. SEE CONTROLLER -->
-        <%= f.button :submit, "Save & Exit", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
-        <!-- ADD NEW PERSONA : COUNT IS WORKING || BUT POST IS NOT WORKING. SEE CONTROLLER -->
-        <% if @demo.personas.count < 2 %>
-          <button type="button" class="btn" data-controller="tooltip" data-tippy-content="Save and add a new persona" >
-            <%= link_to "Add", dashboard_path, class: "btn btn-primary", method: :submit %>
-          </button>
+        <%= f.button :submit, "Save", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
+        <!-- CONTINUE ADD NEW PERSONA :  WORKING -->
+        <% if @persona.userjourneys.count < 2 %>
+          <%= f.button :submit, "Continue", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and start a new user journey' %>
         <% end %>
-        <!-- NEXT : WORKING -->
-        <%= f.button :submit, "Next", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Start a user journey' %>
+      </div>
+      <div class="form-actions d-flex">
+        <!-- EDIT PERSONA JOURNEYS: COUNT IS WORKING || BUT POST IS NOT WORKING. SEE CONTROLLER -->
+        <% if @demo.userjourneys.any? %>
+        <% i = 0 %>
+          <% @demo.userjourneys.each do |journey| %>
+            <%= link_to "Edit #{@persona.name}'s Journey #{i += 1}", edit_demo_userjourney_path(@demo, journey), {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": "Save and Edit #{@persona.name}'s '#{journey.name}' Journey"} %>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
 <div class="row mt-5">
-    <div class="col-12">
-      <div class="m-4 text-center">
-        <button type="button" class="btn" data-controller="tooltip" data-placement="top" data-tippy-content="Delete this persona" >
-          <%= link_to "Delete #{@persona.name}",
-          demo_persona_path(:demo_id, @persona),
-          class: "btn btn-ghost-white btn-sm",
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-        </button>
-      </div>
+  <div class="col-12">
+    <div class="m-4 text-center">
+      <button type="button" class="btn" data-controller="tooltip" data-placement="top" data-tippy-content="Delete this persona" >
+        <%= link_to "Delete #{@persona.name}",
+        demo_persona_path(:demo_id, @persona),
+        class: "btn btn-ghost-white btn-sm",
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </button>
     </div>
   </div>
+</div>

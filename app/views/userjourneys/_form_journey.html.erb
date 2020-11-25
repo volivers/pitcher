@@ -16,11 +16,7 @@
       <% end %>
     </div>
   </div>
-    <% if params[:from] == "dashboard" %>
-      <%= link_to "Back", dashboard_path, {:class=>'btn btn-primary back-btn'} %>
-    <% else %>
-      <%= link_to "Back", edit_demo_persona_path(@demo, @persona), {:class=>'btn btn-primary back-btn'} %>
-    <% end %>
+  <%= link_to "Back to Dashboard", dashboard_path, {:class=>'btn btn-primary back-btn'} %>
   <%= f.submit 'Generate user flow', class: 'btn btn-primary' %>
   <%#= f.button :submit, "Next", class: 'btn btn-primary' %>
 <% end %>
