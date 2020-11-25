@@ -12,7 +12,7 @@
 
     .standpoint {
       position: relative;
-      width: 360px;
+      width: auto;
 
       .backdrop-component {
         img {
@@ -23,12 +23,12 @@
       .component-container {
         position: absolute;
         top: 20%;
+        padding: 1rem;
 
         .grids-component {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 2px;
-          padding: 2rem;
 
           .grid-item {
             max-height: 100%;
@@ -84,6 +84,7 @@
         }
 
         .listings-component {
+
           .listings-container {
 
             .listing-item {
@@ -100,6 +101,32 @@
                 max-width: 100%;
                 max-height: 100%;
               }
+            }
+          }
+        }
+
+        .payments-component {
+
+          .payments-container {
+
+            .payment-item {
+
+              margin-top: 0.25rem;
+              margin-bottom: 0.25rem;
+
+              &.button:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+              }
+
+              img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+
+            .payment-wrapper {
+              display: flex;
             }
           }
         }

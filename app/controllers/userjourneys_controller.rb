@@ -30,7 +30,7 @@ class UserjourneysController < ApplicationController
       grids: ["list", "index", "grid"],
       details: ["details", "overview", "profile"],
       listings: ["options", "items", "offers"],
-      payment: ["payment", "checkout", "basket"],
+      payments: ["payment", "checkout", "basket"],
       notification: ["alert", "popup", "modal", "window", "notification", "message"],
       banners: ["banner", "section"],
       search: ["search", "searches"]

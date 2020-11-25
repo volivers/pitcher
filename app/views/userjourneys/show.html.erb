@@ -63,13 +63,17 @@
                       </div>
                     </div>
                   <% end %>
-                  <% if @viewpoint_dictionary[:payment].include? word %>
-                    <div class="listings-component" data-viewpoint="<%= step.viewpoint %>">
-                      <div class="listings-container">
-                        <div class="listing-item"><%= image_tag "ui-components/heading-6.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/label.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/label.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/button.svg"%></div>
+                  <% if @viewpoint_dictionary[:payments].include? word %>
+                    <div class="payments-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="payments-container">
+                        <div class="payment-item"><%= image_tag "ui-components/basket-card.svg"%></div>
+                        <div class="payment-item p-4"><%= image_tag "ui-components/visa-card.svg"%></div>
+                        <div class="payment-item button px-1"><%= image_tag "ui-components/label-l.svg"%></div>
+                        <div class="payment-wrapper">
+                          <div class="payment-item button px-1"><%= image_tag "ui-components/label-m.svg"%></div>
+                          <div class="payment-item button px-1 "><%= image_tag "ui-components/label-s.svg"%></div>
+                        </div>
+                        <div class="payment-item button px-1 d-flex justify-content-center"><%= image_tag "ui-components/button-secondary.svg"%></div>
                       </div>
                     </div>
                   <% end %>
