@@ -1,37 +1,38 @@
-    <div class="modal fade" data-valid="<%= @valid %>" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="demoModalLabel">Hey there, <%= @user.first_name %> 👋!</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <%= simple_form_for @demo, remote: true do |f| %>
-            <div class="modal-body">
-              <h2>
-                Ready to take the world by storm?
-
-                First, let’s give your demo a name!
-              </h2>
-              <div class="form-inputs">
-                <%= f.error_notification %>
-                <% f.hidden_field :from, value: @from %>
-                <%= f.input :name,
-                label: false,
-                required: true,
-                autofocus: true,
-                id: "demo-entry",
-                placeholder: "Awesome Startup Name" %>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <div class="form-actions">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Maybe later..</button>
-                <%= f.button :submit, "Let's go!", class: 'btn btn-primary' %>
-              </div>
-            </div>
-          <% end %>
-        </div>
+<div class="modal fade" data-valid="<%= @valid %>" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="demoModalLabel">Hey there, <%= @user.first_name %> 👋!</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <%= simple_form_for @demo, remote: true do |f| %>
+        <div class="modal-body">
+          <h2>
+            Ready to take the world by storm?
+            First, let’s give your demo a name!
+          </h2>
+          <div class="form-inputs">
+            <%= f.error_notification %>
+
+            <%= f.input :name,
+            label: false,
+            required: true,
+            autofocus: true,
+            id: "demo-entry",
+            placeholder: "Awesome Startup Name" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Maybe later..</button>
+            <%= f.button :submit, "Let's go!", class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
     </div>
+  </div>
+</div>
+
+

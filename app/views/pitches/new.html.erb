@@ -1,3 +1,4 @@
+<%= render "modal-pitch" %>
 <%= render 'shared/side_menu' %>
 <%= render 'shared/form_header' %>
 <div class="row mt-5 d-flex justify-content-center">
@@ -13,7 +14,6 @@
                     placeholder: "Taxis suck.",
                     :input_html => { :rows => 1}
                     %>
-
         <%= f.input :target,
                     as: :text,
                     label: "Target",
@@ -22,21 +22,23 @@
                     placeholder: "People getting places.",
                     :input_html => { :rows => 1}
                     %>
-
         <%= f.input :solution,
-                    as: :text,
-                    label: "Solution",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "Private car driving service.",
-                    :input_html => { :rows => 1}
-                    %>
-      </div>
-      <div class="form-actions d-flex">
-
-        <%= link_to "Back", :back, {:class=>'btn btn-primary back-btn'} %>
-        <%= f.button :submit, "Next", class: 'btn btn-primary next-btn' %>
-      </div>
-    <% end %>
+                      as: :text,
+                      label: "Solution",
+                      required: true,
+                      autofocus: true,
+                      placeholder: "Private car driving service.",
+                      :input_html => { :rows => 1}
+                      %>
+        </div>
+        <div class="form-actions d-flex">
+          <%= link_to "Back", :back, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
+          <%= f.button :submit, "Next", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-tippy-content": 'Create your pitch' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+
+<button type="button" id ="hidden-button" class="d-none btn btn-primary" data-toggle="modal" data-target="#onboarding">
+  Launch demo modal
+</button>

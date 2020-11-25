@@ -25,12 +25,21 @@ require("@nathanvda/cocoon")
 
 // External imports
 import "bootstrap";
+import "controllers"
+
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+
 
 // Internal imports, e.g:
 import { scrollDepthIndicator } from '../components/scroll_indicator';
 import { demoTooltip } from '../components/tooltip';
 import { validFalseDemo } from '../components/modal';
 // import { PreloaderInit } from '../components/preloader';
+
+import { onboardingModal } from '../components/onboarding_modal.js';
+
 import { stepperToggle } from '../components/stepper';
 import { sidebarToggle } from '../components/sidemenu';
 
@@ -44,6 +53,7 @@ document.addEventListener('turbolinks:load', (e) => {
   validFalseDemo(e);
   demoTooltip(e);
   // PreloaderInit(e);
+  onboardingModal();
   scrollDepthIndicator(e);
   sidebarToggle(e);
   stepperToggle(e);
