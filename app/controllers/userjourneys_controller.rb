@@ -1,5 +1,5 @@
 class UserjourneysController < ApplicationController
-  before_action :set_userjourney, only: [:show, :edit, :destroy, :update]
+  before_action :set_userjourney, only: [:show, :edit, :update, :destroy]
   before_action :set_demo, except: [:destroy]
   before_action :set_persona, only: [:new]
 
@@ -29,11 +29,13 @@ class UserjourneysController < ApplicationController
     @viewpoint_dictionary = {
       grids: ["list", "index", "grid"],
       details: ["details", "overview", "profile"],
-      listings: ["options", "items", "offers"],
+      lists: ["items", "offers"],
       payments: ["payment", "checkout", "basket"],
       notification: ["alert", "popup", "modal", "window", "notification", "message"],
-      banners: ["banner", "section"],
-      search: ["search", "searches"]
+      banners: ["banner", "banners", "section", "sections"],
+      search: ["search", "searches"],
+      reviews: ["comment", "comments", "review", "reviews"],
+      recommendations: ["recommended", "recommendation", "recommendations", "suggestion", "suggestions"]
     }
     # @viewpoint_dictionary = {
     #   dashboard: ["dashboard"],
@@ -62,14 +64,13 @@ class UserjourneysController < ApplicationController
 
   def edit
     # @persona = Persona.find(params[:persona_id])
-    # @persona.name = @userjourney.persona.name
+    # @persona = @userjourney.persona.name
     # @userjourney.persona = Persona.find(params[:userjourney][:persona_id])
   end
 
   def update
     @userjourney.update(userjourney_params)
     @userjourney.demo = @demo
-    @userjourney.persona = @persona
     if @userjourney.save
       redirect_to demo_userjourney_path(@demo, @userjourney), notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
     else

@@ -1,13 +1,13 @@
-<div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center">
     <div class="header-form col-12">
       <h6><%= @demo.name %></h6>
+
       <h1 class="mb-5">
-        This is
-        <%= @userjourney.persona.name %>'s <%= @userjourney.name %> User Flow
-      </h1>
-      <h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>
+        This is <%= @userjourney.persona.name %> <%= controller_name %></h1>
+      <!--<h6 class="info">Please fill in the form to update your <%= controller_name %></h6>-->
     </div>
   </div>
+
   <div class="row d-flex justify-content-center mt-5">
     <div class="col-12">
       <div class="steps-container">
@@ -39,28 +39,54 @@
                       </div>
                     </div>
                   <% end %>
-                  <% if @viewpoint_dictionary[:listings].include? word %>
-                    <div class="listings-component" data-viewpoint="<%= step.viewpoint %>">
-                      <div class="listings-container">
-                        <div class="listing-item"><%= image_tag "ui-components/headline_img-6.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/list-item.svg"%></div>
-                        <div class="listing-item button"><%= image_tag "ui-components/button.svg"%></div>
-                      </div>
-                    </div>
-                  <% end %>
+
                   <% if @viewpoint_dictionary[:details].include? word %>
                     <div class="details-component" data-viewpoint="<%= step.viewpoint %>">
                       <div class="page-header"><%= image_tag "ui-components/headline-5.svg"%></div>
                       <div class="details-container">
-                        <div class="detail-item"><%= image_tag "ui-components/image-panel.svg"%></div>
-                        <div class="detail-item"><%= image_tag "ui-components/body-twolines.svg"%></div>
+                        <div class="detail-item"><%= image_tag "ui-components/image-single.svg"%></div>
+                        <div class="detail-item"><%= image_tag "ui-components/body-multiline.svg"%></div>
+                        <div class="detail-item"><%= image_tag "ui-components/body-multiline.svg"%></div>
                         <div class="detail-item button"><%= image_tag "ui-components/button-block.svg"%></div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if @viewpoint_dictionary[:lists].include? word %>
+                    <div class="lists-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="lists-container">
+                        <div class="list-item"><%= image_tag "ui-components/headline-6_img.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/list-item.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/button.svg"%></div>
+                      </div>
+                    </div>
+                  <% end %>
+                  <% if @viewpoint_dictionary[:reviews].include? word %>
+                    <div class="lists-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="lists-container">
+                        <div class="list-item"><%= image_tag "ui-components/headline-6_img.svg"%></div>
+                        <div class="list-item"><%= image_tag "ui-components/review.svg"%></div>
+                        <div class="list-item"><%= image_tag "ui-components/review.svg"%></div>
+                        <div class="list-item"><%= image_tag "ui-components/review.svg"%></div>
+                        <div class="list-item"><%= image_tag "ui-components/review.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/label-l.svg"%></div>
+                      </div>
+                    </div>
+                  <% end %>
+                  <% if @viewpoint_dictionary[:recommendations].include? word %>
+                    <div class="lists-component" data-viewpoint="<%= step.viewpoint %>">
+                      <div class="lists-container">
+                        <div class="list-item button"><%= image_tag "ui-components/headline-6_img.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/recommendation.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/recommendation.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/recommendation.svg"%></div>
+                        <div class="list-item button"><%= image_tag "ui-components/recommendation.svg"%></div>
                       </div>
                     </div>
                   <% end %>
@@ -69,7 +95,7 @@
                       <div class="page-header"><%= image_tag "ui-components/headline-5.svg"%></div>
                       <div class="payments-container">
                         <div class="payment-item"><%= image_tag "ui-components/basket-card.svg"%></div>
-                        <div class="payment-item p-4"><%= image_tag "ui-components/visa-card-2.svg"%></div>
+                        <div class="payment-item p-1"><%= image_tag "ui-components/visa-card-2.svg"%></div>
                         <div class="payment-item button px-1"><%= image_tag "ui-components/label-l.svg"%></div>
                         <div class="payment-wrapper">
                           <div class="payment-item button px-1"><%= image_tag "ui-components/label-m.svg"%></div>
@@ -101,4 +127,17 @@
     <%= link_to edit_demo_userjourney_path(@demo, @userjourney.id, from: @from), class: "btn btn-primary" do %>
       Edit <%= @userjourney.persona.name %>'s <%= @userjourney.name %> Journey
     <% end %>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="m-4 text-center">
+        <button type="button" class="btn" data-controller="tooltip" data-placement="top" data-tippy-content="Delete this journey" >
+          <%= link_to "Delete #{@userjourney.name} Journey",
+          demo_userjourney_path(@demo, @userjourney),
+          class: "btn btn-ghost-white btn-sm",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        </button>
+      </div>
+    </div>
   </div>
