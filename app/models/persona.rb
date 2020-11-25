@@ -1,6 +1,6 @@
 class Persona < ApplicationRecord
   belongs_to :demo
-  has_many :userjourneys, dependent: :destroy # ? maybe i might want to reasign a userjourney
+  has_many :userjourneys, dependent: :destroy
 
   validates :name, presence: true
   validates :age, presence: true

@@ -1,3 +1,5 @@
+window.onload = function() {bannerInit()};
+
 function bannerInit() {
   if($('#canv').length > 0){
     let c = document.getElementById('canv');
