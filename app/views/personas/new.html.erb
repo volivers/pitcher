@@ -16,8 +16,8 @@
         </div>
 
         <div class="form-actions d-flex">
-          <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-primary'} %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary' %>
+          <%= link_to "Back", edit_demo_pitch_path(@demo, @pitch), {:class=>'btn btn-primary' "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to demo info'} %>
+          <%= f.button :submit, "Next", class: 'btn btn-primary' "data-controller": 'tooltip', "data-tippy-content": 'Create your persona' %>
         </div>
       <% end %>
     </div>
