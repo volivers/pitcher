@@ -4,6 +4,14 @@
   background-color: $angular-black-87;
   color: $white-87;
 
+
+  .nav-item{
+
+    &.active {
+      background-color: transparent;
+    }
+  }
+
   &.demos {
     background-color: $white;
     color: $angular-black;

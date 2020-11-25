@@ -33,7 +33,7 @@
   transition: transform 0.3s ease;
 
   &.open {
-    transform: translateX(150px);
+    transform: translateX(75px);
     color: $white-87;
   }
 
