@@ -29,6 +29,7 @@ class PitchesController < ApplicationController
   def update
     @pitch.update(pitch_params)
     @pitch.demo = @demo
+
     if @pitch.save
       if params[:from] == "dashboard"
         params[:from] = ""

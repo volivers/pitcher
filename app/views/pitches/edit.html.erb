@@ -32,9 +32,23 @@
                       %>
         </div>
         <div class="form-actions d-flex">
-          <%= link_to "Back", dashboard_path, {:class=>'btn btn-primary back-btn'} %>
-          <%= f.button :submit, "Update and Continue", class: 'btn btn-primary next-btn' %>
+          <%= link_to "Cancel", dashboard_path, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
+          <%# <%= f.button :submit, "Save and Exit", class: 'btn btn-primary next-btn' %>
+          <%= f.button :submit, "Continue", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and add a persona' %>
         </div>
       <% end %>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="m-4 text-center">
+      <button type="button" class="btn" data-controller="tooltip" data-placement="top" data-tippy-content="Delete this pitch" >
+        <%= link_to "Delete pitch",
+        demo_pitch_path(@demo.id, @pitch),
+        class: "btn btn-ghost-white btn-sm",
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </button>
+    </div>
   </div>
 </div>
