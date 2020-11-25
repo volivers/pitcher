@@ -44,6 +44,26 @@
   }
 }
 
+nav.stepper {
+  position: sticky;
+  bottom: 0;
+  ol.breadcrumb {
+    small {
+      font-family: $font-monospace;
+      text-transform: uppercase;
+      li {
+        a {
+          color: $white-60;
+          &:hover {
+            color: $white-87;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 .circle-marker::before {
   content: "";
   background-color: $primary;
