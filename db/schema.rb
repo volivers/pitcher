@@ -46,7 +46,9 @@ ActiveRecord::Schema.define(version: 2020_11_23_130555) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "demo_id", null: false
+    t.bigint "user_id", null: false
     t.index ["demo_id"], name: "index_pitches_on_demo_id"
+    t.index ["user_id"], name: "index_pitches_on_user_id"
   end
 
   create_table "steps", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_130555) do
   add_foreign_key "demos", "users"
   add_foreign_key "personas", "demos"
   add_foreign_key "pitches", "demos"
+  add_foreign_key "pitches", "users"
   add_foreign_key "steps", "userjourneys"
   add_foreign_key "userjourneys", "demos"
   add_foreign_key "userjourneys", "personas"
