@@ -8,10 +8,10 @@ function stepperToggle() {
   const stepMarker = document.querySelector(".circle-marker")
 
   if (pitchNew || pitchEdit) {
-    stepMarker.style.transform = "translateX(94px)";
+    stepMarker.style.transform = "translateX(7vw)";
     stepperItemOne.classList.add('active');
   } else if (personaNew || personaEdit) {
-    stepMarker.style.transform = "translateX(285px)";
+    stepMarker.style.transform = "translateX(21.5vw)";
     stepperItemTwo.classList.add('active');
   }
 };
