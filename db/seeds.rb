@@ -70,9 +70,9 @@ Step.create!( standpoint: "in the payment", viewpoint: "the payee details form",
 
 
 # Tinderoo (dating)
-puts 'Creating Tinderoo demo ...'
+puts 'Creating Tender demo ...'
 
-@demo = Demo.create!( name: 'Tunder', url: "www.pitcher.com/preview/tunder", user_id: @emily.id )
+@demo = Demo.create!( name: 'Tender', url: "www.pitcher.com/preview/tender", user_id: @emily.id )
 Pitch.create!( pain: "No available apps on the market to solve this problem.", target: "Everyone who faces this problem.", solution: "App to solve the problem.", demo: @demo )
 @persona = Persona.create!( name: "Nina", age: 27, bio: "Nina is an intern consultant at McKinsey. She is really focused on developing her career and, at some point, wants to build a family with the love of his life.", nationality: "Russian", location: "Paris, FR", job: "Junior Consultant", relationship_status: "Single", income: "50.000€/year", demo: @demo )
 Persona.create!( name: "Nicolas", age: 33, bio: "Nicolas founded his first start-up at 21 years-old and ever since then he never stopped aiming higher. On his spare time, he loves finding his next one-night stand.", nationality: "French", location: "Paris, FR", job: "Founder/CEO", relationship_status: "Single", income: "120.000€/year", demo: @demo )
