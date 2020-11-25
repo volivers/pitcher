@@ -31,7 +31,8 @@ class UserjourneysController < ApplicationController
       details: ["details", "overview", "profile"],
       items: ["options", "items", "offers"],
       payment: ["payment", "checkout", "basket"],
-      notification: ["alert", "popup", "modal", "window", "notification", "message"]
+      notification: ["alert", "popup", "modal", "window", "notification", "message"],
+      banners: ["banner", "section"]
     }
     # @viewpoint_dictionary = {
     #   dashboard: ["dashboard"],
