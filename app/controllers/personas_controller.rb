@@ -17,13 +17,8 @@ class PersonasController < ApplicationController
     @persona.demo_id = Demo.find(params[:demo_id]).id
     @pitch = Pitch.find(params[:pitch])
     if @persona.save
-      if params[:from] == "dashboard"
-        params[:from] = ""
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
-      else
-        params[:from] = ""
-        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
-      end
+      # TODO: redirect to path depending on the clicked button || will we need to create different routes/methods?
+      redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
     else
       render :new
     end
