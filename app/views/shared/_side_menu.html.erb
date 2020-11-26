@@ -4,63 +4,70 @@
     <a href="#"><i class="fas fa-crosshairs"></i> Pitch</a>
   </h6>
   <% if @demo.pitches.any? %>
-    <p><%= @demo.pitches.first.pain %><br>
-    <%= @demo.pitches.first.solution %><br>
-    <%= @demo.pitches.first.target %>
-    <%= link_to edit_demo_pitch_path(@demo, @demo.pitches.first.id), {id: "btn-pencil"} do %>
-      <i class="fas fa-pen"></i>
-    <% end %>
+    <p>
+      <%= @demo.pitches.first.pain %><br>
+      <%= @demo.pitches.first.solution %><br>
+      <%= @demo.pitches.first.target %>
+      <%= link_to edit_demo_pitch_path(@demo, @demo.pitches.first.id), {id: "btn-pencil"} do %>
+        <i class="fas fa-pen"></i>
+      <% end %>
     </p>
   <% end %>
   <% if @demo.personas.any? %>
     <% @demo.personas.each do |persona| %>
-    <div class="panel-group mb-4" id="accordion">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-            <h6><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="far fa-user"></i> <%= persona.name %>
-            <i class="fas fa-caret-down"></i></a></h6>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="panel-body">
-            <!-- In a accordion or a dropdown show following info -->
-            <p><%= persona.bio %>
-            <%= link_to edit_demo_persona_path(@demo, @pitch), {id: "btn-pencil"} do %>
-              <i class="fas fa-pen"></i>
-            <% end %><br>
-            <span class="badge badge-primary mt-4"><%= persona.age %> years-old</span>
-            <span class="badge badge-primary"><%= persona.job %></span>
-            <span class="badge badge-primary"><%= persona.location %></span>
-            <span class="badge badge-primary"><%= persona.nationality %></span>
-            <span class="badge badge-primary"><%= persona.relationship_status %></span>
-            <span class="badge badge-primary"><%= persona.income %></span>
-            </p>
-            <!-- End-->
-            <div class="container m-0">
-              <% if @demo.personas.count < 2 %>
-                <%= link_to "Add a new persona", new_demo_persona_path(@demo), {:class=>'btn btn-ghost-white btn-sm mt-4'} %>
-              <% end %>
+      <div class="panel-group mb-4" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h6>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  <i class="far fa-user"></i> <%= persona.name %>
+                  <i class="fas fa-caret-down"></i>
+                </a>
+              </h6>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <!-- In a accordion or a dropdown show following info -->
+              <p>
+                <%= persona.bio %>
+                <%= link_to edit_demo_persona_path(@demo, persona), {id: "btn-pencil"} do %>
+                  <i class="fas fa-pen"></i>
+                <% end %>
+                <br>
+                <span class="badge badge-primary mt-4"><%= persona.age %> years-old</span>
+                <span class="badge badge-primary"><%= persona.job %></span>
+                <span class="badge badge-primary"><%= persona.location %></span>
+                <span class="badge badge-primary"><%= persona.nationality %></span>
+                <span class="badge badge-primary"><%= persona.relationship_status %></span>
+                <span class="badge badge-primary"><%= persona.income %></span>
+              </p>
+              <!-- End-->
+              <div class="container m-0">
+                <% if @demo.personas.count < 2 %>
+                  <%= link_to "Add a new persona", new_demo_persona_path(@demo), {:class=>'btn btn-ghost-white btn-sm mt-4'} %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <% if persona.userjourneys.any? %>
-      <h6>
-        <a href="#"><i class="fas fa-wind"></i> User Journeys</a>
-      </h6>
-    <% end %>
-    <div class="container mt-4">
       <% if persona.userjourneys.any? %>
-        <% persona.userjourneys.each do |journey| %>
-          <%= link_to "View #{persona.name}'s #{journey.name} Journey", demo_userjourney_path(@demo, journey.id), {:class=>'btn btn-ghost-white btn-sm'} %>
+        <h6>
+          <a href="#"><i class="fas fa-wind"></i> User Journeys</a>
+        </h6>
+      <% end %>
+      <div class="container mt-4">
+        <% if persona.userjourneys.any? %>
+          <% persona.userjourneys.each do |journey| %>
+            <%= link_to "View #{persona.name}'s #{journey.name} Journey", demo_userjourney_path(@demo, journey.id), {:class=>'btn btn-ghost-white btn-sm'} %>
+          <% end %>
         <% end %>
-      <% end %>
-      <% if persona.userjourneys.count < 2 %>
-        <%= link_to "Add a new journey", new_demo_userjourney_path(@demo), {:class=>'btn btn-ghost-white btn-sm mt-4'} %>
-      <% end %>
+        <% if persona.userjourneys.count < 2 %>
+          <%= link_to "Add a new journey", new_demo_userjourney_path(@demo), {:class=>'btn btn-ghost-white btn-sm mt-4'} %>
+        <% end %>
+      </div>  
     <% end %>
   <% end %>
-  </div>
 </div>
 
 <button class="btn-sidemenu">&#9776;</button>
