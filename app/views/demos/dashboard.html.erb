@@ -58,6 +58,9 @@
                           <% demo.personas.each do |persona| %>
                             <% if persona.userjourneys.any? %>
                               <% persona.userjourneys.each do |userjourney| %>
+                                <%= link_to edit_demo_userjourney_path(demo, userjourney.id, from: @from), class: "dropdown-item" do %>
+                                  Edit <%= persona.name %>'s <%= userjourney.name %> Journey
+                                <% end %>
                                 <%= link_to demo_userjourney_path(demo, userjourney.id, from: @from), class: "dropdown-item" do %>
                                   View <%= persona.name %>'s <%= userjourney.name %> Journey <small>BETA</small>
                                 <% end %>
