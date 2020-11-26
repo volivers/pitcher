@@ -11,16 +11,16 @@ function stepperToggle() {
   const stepMarker = document.querySelector(".circle-marker")
 
   if (pitchNew || pitchEdit) {
-    stepMarker.style.transform = "translateX(7vw)";
+    stepMarker.style.transform = "translateX(11vw)";
     stepperItemOne.classList.add('active');
   } else if (personaNew || personaEdit) {
-    stepMarker.style.transform = "translateX(21.5vw)";
+    stepMarker.style.transform = "translateX(34vw)";
     stepperItemTwo.classList.add('active');
   } else if (journeysNew || journeysEdit) {
-    stepMarker.style.transform = "translateX(35vw)";
+    stepMarker.style.transform = "translateX(58.5vw)";
     stepperItemTwo.classList.add('active');
   } else if (flowShow) {
-    stepMarker.style.transform = "translateX(50vw)";
+    stepMarker.style.transform = "translateX(84vw)";
     stepperItemTwo.classList.add('active');
   }
 };
