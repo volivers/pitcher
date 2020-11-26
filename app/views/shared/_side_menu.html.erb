@@ -1,6 +1,6 @@
 <div id="sidebar" class="sidebar">
 
-  <%= @demo.name %>
+  <h4><%= @demo.name %></h4>
   <%= link_to "Pitch", edit_demo_pitch_path(@demo, @demo.pitches.first.id), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
   <%= @demo.pitches.first.pain %>
   <%= @demo.pitches.first.solution %>

@@ -6,4 +6,5 @@ class Persona < ApplicationRecord
   validates :age, presence: true
   validates :location, presence: true
   validates :bio, presence: true
+  validates_uniqueness_of :name, scope: :demo_id
 end
