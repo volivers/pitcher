@@ -22,12 +22,12 @@
                           data: { confirm: "Are you sure?" } do %>
                           Delete
                         <% end %>
-                        <%= link_to demo_path(demo), class: "dropdown-item" do %>
+                       <!--  <%#= link_to demo_path(demo), class: "dropdown-item" do %>
                           View
-                        <% end %>
+                        <%# end %> -->
                         <% if demo.pitches.any? %>
                           <%= link_to edit_demo_pitch_path(demo, demo.pitches.first, from: @from), class: "dropdown-item" do %>
-                            Edit Pitch
+                            Continue Building
                           <% end %>
                         <% else %>
                           <%= link_to new_demo_pitch_path(demo), class: "dropdown-item" do %>
@@ -58,6 +58,9 @@
                           <% demo.personas.each do |persona| %>
                             <% if persona.userjourneys.any? %>
                               <% persona.userjourneys.each do |userjourney| %>
+                                <%= link_to edit_demo_userjourney_path(demo, userjourney.id, from: @from), class: "dropdown-item" do %>
+                                  Edit <%= persona.name %>'s <%= userjourney.name %> Journey
+                                <% end %>
                                 <%= link_to demo_userjourney_path(demo, userjourney.id, from: @from), class: "dropdown-item" do %>
                                   View <%= persona.name %>'s <%= userjourney.name %> Journey <small>BETA</small>
                                 <% end %>

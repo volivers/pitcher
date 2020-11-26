@@ -20,10 +20,6 @@
         <%= link_to "Cancel", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
         <!-- SAVE & EXIT : NOT WORKING. SEE CONTROLLER -->
         <%= f.button :submit, "Save & Exit", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
-        <!-- CONTINUE ADD NEW PERSONA :  WORKING -->
-        <% if @persona.userjourneys.count < 2 %>
-          <%= f.button :submit, "Continue", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and start a new user journey' %>
-        <% end %>
       </div>
       <div class="form-actions d-flex">
         <!-- EDIT PERSONA JOURNEYS: COUNT IS WORKING || BUT POST IS NOT WORKING. SEE CONTROLLER -->
@@ -32,6 +28,10 @@
           <% @demo.userjourneys.each do |journey| %>
             <%= link_to "Edit #{@persona.name}'s Journey #{i += 1}", edit_demo_userjourney_path(@demo, journey), {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": "Save and Edit #{@persona.name}'s '#{journey.name}' Journey"} %>
           <% end %>
+        <% end %>
+        <!-- CONTINUE ADD NEW PERSONA :  WORKING -->
+        <% if @persona.userjourneys.count < 2 %>
+          <%= f.button :submit, "Add new journey", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and start a new user journey' %>
         <% end %>
       </div>
     <% end %>

@@ -1,10 +1,12 @@
 <div id="sidebar" class="sidebar">
 
   <h4><%= @demo.name %></h4>
-  <%= link_to "Pitch", edit_demo_pitch_path(@demo, @demo.pitches.first.id), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
-  <%= @demo.pitches.first.pain %>
-  <%= @demo.pitches.first.solution %>
-  <%= @demo.pitches.first.target %>
+  <% if @demo.pitches.any? %>
+    <%= link_to "Pitch", edit_demo_pitch_path(@demo, @demo.pitches.first.id), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
+    <%= @demo.pitches.first.pain %>
+    <%= @demo.pitches.first.solution %>
+    <%= @demo.pitches.first.target %>
+  <% end %>
   <% if @demo.personas.any? %>
     <% @demo.personas.each do |persona| %>
       <%= persona.name %>

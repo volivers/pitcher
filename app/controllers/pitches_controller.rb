@@ -10,7 +10,6 @@ class PitchesController < ApplicationController
 
   def new
     @pitch = Pitch.new
-
   end
 
   def create
@@ -18,7 +17,13 @@ class PitchesController < ApplicationController
     @pitch.demo_id = Demo.find(params[:demo_id]).id
 
     if @pitch.save
-      redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
+      # redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
+      if params[:commit].include? 'Add'
+        demo_id = params[:demo_id]
+        redirect_to new_demo_persona_path(demo_id, pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      else
+        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      end
     else
       render :new
     end
@@ -31,12 +36,15 @@ class PitchesController < ApplicationController
     @pitch.demo = @demo
 
     if @pitch.save
-      if params[:from] == "dashboard"
-        params[:from] = ""
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      if params[:commit].include? 'New'
+        demo_id = params[:demo_id]
+        redirect_to new_demo_persona_path(demo_id, pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      elsif params[:commit].include? 'Edit'
+        demo_id = params[:demo_id]
+        persona_id = params[:edit_persona]
+        redirect_to edit_demo_persona_path(demo_id, persona_id, pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       else
-        params[:from] = ""
-        redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end
     else
       render :partial => 'modal-pitch'
