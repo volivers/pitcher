@@ -4,13 +4,13 @@ const onboardingModal = () => {
   let onboardPitch = document.querySelector('#onboard-pitch');
   let pitchNew = document.querySelector('.pitches.new')
 
-  // Persons
+  // Personas
   let onboardPersona = document.querySelector('#onboard-persona');
   let personaNew = document.querySelector('.personas.new')
 
   // Userjourney
   let onboardUserjourney = document.querySelector('#onboard-userjourney');
-  let userjourneyNew = document.querySelector('.userjourney.new')
+  let userjourneyNew = document.querySelector('.userjourneys.new')
 
 
   // ...
@@ -71,7 +71,7 @@ const onboardingModal = () => {
 
   // persona
 
-  if (personaNew) {
+if (personaNew) {
     // let elements = document.querySelectorAll('textarea')
     // let count = elements.length
 
@@ -80,7 +80,7 @@ const onboardingModal = () => {
     let modalBtn = document.querySelector('#hidden-button')
     modalBtn.click()
 
-    if(onboardPitch) {
+    if(onboardPersona) {
         let step1 = document.querySelector('#step1')
         let step2 = document.querySelector('#step2')
         let step3 = document.querySelector('#step3')
@@ -88,10 +88,10 @@ const onboardingModal = () => {
 
         let steps = [step1, step2, step3, step4]
 
-        let content1 = document.querySelector('#onboard .step1')
-        let content2 = document.querySelector('#onboard .step2')
-        let content3 = document.querySelector('#onboard .step3')
-        let content4 = document.querySelector('#onboard .step4')
+        let content1 = document.querySelector('#onboard-persona .step1')
+        let content2 = document.querySelector('#onboard-persona .step2')
+        let content3 = document.querySelector('#onboard-persona .step3')
+        let content4 = document.querySelector('#onboard-persona .step4')
 
         let contents = [content1, content2, content3, content4]
 
@@ -112,7 +112,7 @@ const onboardingModal = () => {
               }
             })
 
-            // add the 'active classe to the step'
+            // add tthe 'active classe to the step'
             e.target.classList.add('active')
 
           });
@@ -122,8 +122,10 @@ const onboardingModal = () => {
   }
 
 
+
   // userjourney
-  if (userjourneyNew) {
+
+if (userjourneyNew) {
     // let elements = document.querySelectorAll('textarea')
     // let count = elements.length
 
@@ -140,10 +142,10 @@ const onboardingModal = () => {
 
         let steps = [step1, step2, step3, step4]
 
-        let content1 = document.querySelector('#onboard .step1')
-        let content2 = document.querySelector('#onboard .step2')
-        let content3 = document.querySelector('#onboard .step3')
-        let content4 = document.querySelector('#onboard .step4')
+        let content1 = document.querySelector('#onboard-userjourney .step1')
+        let content2 = document.querySelector('#onboard-userjourney .step2')
+        let content3 = document.querySelector('#onboard-userjourney .step3')
+        let content4 = document.querySelector('#onboard-userjourney .step4')
 
         let contents = [content1, content2, content3, content4]
 
@@ -164,7 +166,7 @@ const onboardingModal = () => {
               }
             })
 
-            // add the 'active classe to the step'
+            // add tthe 'active classe to the step'
             e.target.classList.add('active')
 
           });
