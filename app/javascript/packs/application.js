@@ -40,6 +40,7 @@ import { validFalseDemo } from '../components/modal';
 import { onboardingModal } from '../components/onboarding_modal.js';
 import { stepperToggle } from '../components/stepper';
 import { sidebarToggle } from '../components/sidemenu';
+import { bannerInit } from '../components/banner';
 
 // const pitchNew = document.querySelector('.pitches.new');
 // const pitchEdit = document.querySelector('.pitches.edit');
