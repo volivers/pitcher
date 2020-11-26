@@ -3,40 +3,42 @@
 <%= render 'shared/form_header' %>
 <div class="row mt-5 d-flex justify-content-center">
   <div class="col-12 col-xs-10 col-lg-7">
-    <%= simple_form_for [@demo, @pitch] do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :pain,
-                  as: :text,
-                  label: "Pain",
-                  required: true,
-                  autofocus: true,
-                  placeholder: "Taxis suck.",
-                  :input_html => { :rows => 1}
-                  %>
-      <%= f.input :target,
-                  as: :text,
-                  label: "Target",
-                  required: true,
-                  autofocus: true,
-                  placeholder: "People getting places.",
-                  :input_html => { :rows => 1}
-                  %>
-      <%= f.input :solution,
-                  as: :text,
-                  label: "Solution",
-                  required: true,
-                  autofocus: true,
-                  placeholder: "Private car driving service.",
-                  :input_html => { :rows => 1}
-                  %>
-      </div>
-      <div class="form-actions d-flex">
-        <%# <%= link_to "Save & Exit", :submit, dashboard_path, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and back to dashboard' %>
-        <%= link_to "Cancel", :back, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
-        <%= f.button :submit, "Next", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-tippy-content": 'Add a persona' %>
-      </div>
-    <% end %>
+      <%= simple_form_for [@demo, @pitch] do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :pain,
+                    as: :text,
+                    label: "Pain",
+                    required: true,
+                    autofocus: true,
+                    placeholder: "Taxis suck.",
+                    :input_html => { :rows => 1}
+                    %>
+        <%= f.input :target,
+                    as: :text,
+                    label: "Target",
+                    required: true,
+                    autofocus: true,
+                    placeholder: "People getting places.",
+                    :input_html => { :rows => 1}
+                    %>
+        <%= f.input :solution,
+                      as: :text,
+                      label: "Solution",
+                      required: true,
+                      autofocus: true,
+                      placeholder: "Private car driving service.",
+                      :input_html => { :rows => 1}
+                      %>
+        </div>
+        <div class="form-actions d-flex">
+          <%= link_to "Cancel", :back, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
+          <%= f.button :submit, "Save and Exit", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and go back to dashboard' %>
+          <%= hidden_field_tag :new_persona, 1 %>
+          <%= f.button :submit, "Add a persona", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and continue your path to sucess' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 

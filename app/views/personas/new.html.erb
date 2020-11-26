@@ -22,10 +22,14 @@
         <%= link_to "Cancel", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
         <!-- SAVE & EXIT : NOT WORKING. SEE CONTROLLER -->
         <%= f.button :submit, "Save & Exit", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
-        <!-- NEXT : WORKING -->
-        <%= f.button :submit, "CONTINUE", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Start a user journey' %>
       </div>
-
+      <div class="form-actions d-flex">
+        <% if @demo.personas.count < 2 %>
+            <%= link_to "Add a New Persona", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Keep on building. Create your secondary segment'} %>
+        <% end %>
+        <!-- NEXT : WORKING -->
+        <%= f.button :submit, "Start a Journey", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Start a user journey for the persona you just created' %>
+      </div>
       <div class="form-actions d-flex justify-content-center">
         <!-- ADD NEW PERSONA : COUNT IS WORKING || BUT POST IS NOT WORKING. SEE CONTROLLER -->
         <% if @demo.personas.count < 2 %>
