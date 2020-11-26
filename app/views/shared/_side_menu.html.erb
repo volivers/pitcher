@@ -1,7 +1,7 @@
 <div id="sidebar" class="sidebar">
   <h4><%= @demo.name %></h4>
   <h6>
-    <a href="#"><i class="fas fa-crosshairs"></i> Pitch</a>
+    <i class="fas fa-crosshairs"></i> Pitch
   </h6>
   <% if @demo.pitches.any? %>
     <p>
@@ -18,12 +18,10 @@
       <div class="panel-group mb-4" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
-              <h6>
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                   <i class="far fa-user"></i> <%= persona.name %>
                   <i class="fas fa-caret-down"></i>
                 </a>
-              </h6>
           </div>
           <div id="collapse1" class="panel-collapse collapse in">
             <div class="panel-body">
@@ -43,31 +41,31 @@
               </p>
               <!-- End-->
               <div class="container m-0">
-                <% if @demo.personas.count < 2 %>
-                  <%= link_to "Add a new persona", new_demo_persona_path(@demo), {:class=>'btn btn-ghost-white btn-sm mt-4'} %>
+                <% if persona.userjourneys.any? %>
+                  <% persona.userjourneys.each do |journey| %>
+                    <%= link_to "View #{persona.name}'s #{journey.name} Journey", demo_userjourney_path(@demo, journey.id), {:class=>'btn btn-ghost-white btn-sm m-4 px-2'} %>
+                  <% end %>
+                <% end %>
+                <% if persona.userjourneys.count < 2 %>
+                  <%= link_to "Add a new journey", new_demo_persona_userjourney_path(@demo, persona), {:class=>'btn btn-ghost-white btn-sm m-4 px-2'} %>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <% if persona.userjourneys.any? %>
-        <h6>
-          <a href="#"><i class="fas fa-wind"></i> User Journeys</a>
-        </h6>
-      <% end %>
-      <div class="container mt-4">
-        <% if persona.userjourneys.any? %>
-          <% persona.userjourneys.each do |journey| %>
-            <%= link_to "View #{persona.name}'s #{journey.name} Journey", demo_userjourney_path(@demo, journey.id), {:class=>'btn btn-ghost-white btn-sm'} %>
-          <% end %>
-        <% end %>
-        <% if persona.userjourneys.count < 2 %>
-          <%= link_to "Add a new journey", new_demo_userjourney_path(@demo), {:class=>'btn btn-ghost-white btn-sm mt-4'} %>
-        <% end %>
-      </div>  
+      <%# <% if persona.userjourneys.any? %>
+        <%# <h6> %>
+          <%# <a href="#"><i class="fas fa-wind"></i> User Journeys</a> %>
+        <%# </h6> %>
+      <%# <% end %>
     <% end %>
   <% end %>
+    <div class="container m-0 py-4">
+      <% if @demo.personas.count < 2 %>
+        <%= link_to "Add a new persona", new_demo_persona_path(@demo), {:class=>'btn btn-ghost-white btn-sm m-4 px-2'} %>
+      <% end %>
+    </div>
 </div>
 
 <button class="btn-sidemenu">&#9776;</button>

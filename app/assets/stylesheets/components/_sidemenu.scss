@@ -44,7 +44,7 @@
   }
 }
 
-.sidebar h4 {
+.sidebar h4,.sidebar h6 {
   padding: 8px 8px 8px 32px;
   color: #818181;
   display: block;
@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-.sidebar h4:hover {
+.sidebar h4:hover,.sidebar h6:hover {
   color: #f1f1f1;
 }
 
