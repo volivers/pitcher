@@ -44,6 +44,23 @@
           <%= @persona.relationship_status %><br>
           <%= @persona.income %></p>
       <% end %>
+      <% elsif controller_name == 'userjourneys' && action_name == 'new' %>
+      <h4>Pitch:</h4>
+      <% if @pitch.present? %>
+          <p><%= @pitch.pain %><br>
+          <%= @pitch.target %><br>
+          <%= @pitch.solution %></p>
+      <h4>Persona:</h4>
+      <% elsif @persona.present? %>
+        <% @personas.each do %>
+          <p><%= @persona.name %><br>
+          <%= @persona.bio %></p>
+        <% end %>
+      <% end %>
+      <h4>User Journey:</h4>
+      <% elsif @userjourney.present? %>
+          <p><%= @userjourney.name %></p>
+      <% end %>
   <% end %>
 </div>
 

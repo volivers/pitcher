@@ -37,16 +37,14 @@ import { scrollDepthIndicator } from '../components/scroll_indicator';
 import { demoTooltip } from '../components/tooltip';
 import { validFalseDemo } from '../components/modal';
 // import { PreloaderInit } from '../components/preloader';
-
 import { onboardingModal } from '../components/onboarding_modal.js';
-
 import { stepperToggle } from '../components/stepper';
 import { sidebarToggle } from '../components/sidemenu';
 
-const pitchNew = document.querySelector('.pitches.new');
-const pitchEdit = document.querySelector('.pitches.edit');
-const personaNew = document.querySelector('.personas.new');
-const personaEdit = document.querySelector('.personas.edit');
+// const pitchNew = document.querySelector('.pitches.new');
+// const pitchEdit = document.querySelector('.pitches.edit');
+// const personaNew = document.querySelector('.personas.new');
+// const personaEdit = document.querySelector('.personas.edit');
 
 document.addEventListener('turbolinks:load', (e) => {
   // Call your functions here, e.g:
