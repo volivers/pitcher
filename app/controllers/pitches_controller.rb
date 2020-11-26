@@ -10,7 +10,6 @@ class PitchesController < ApplicationController
 
   def new
     @pitch = Pitch.new
-
   end
 
   def create
