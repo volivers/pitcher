@@ -3,42 +3,42 @@
 <%= render 'shared/form_header' %>
 <div class="row mt-5 d-flex justify-content-center">
   <div class="col-12 col-xs-10 col-lg-7">
-      <%= simple_form_for [@demo, @pitch] do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :pain,
+    <%= simple_form_for [@demo, @pitch] do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :pain,
+                  as: :text,
+                  label: "Pain",
+                  required: true,
+                  autofocus: true,
+                  placeholder: "Taxis suck.",
+                  :input_html => { :rows => 1}
+                  %>
+      <%= f.input :target,
+                  as: :text,
+                  label: "Target",
+                  required: true,
+                  autofocus: true,
+                  placeholder: "People getting places.",
+                  :input_html => { :rows => 1}
+                  %>
+      <%= f.input :solution,
                     as: :text,
-                    label: "Pain",
+                    label: "Solution",
                     required: true,
                     autofocus: true,
-                    placeholder: "Taxis suck.",
+                    placeholder: "Private car driving service.",
                     :input_html => { :rows => 1}
                     %>
-        <%= f.input :target,
-                    as: :text,
-                    label: "Target",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "People getting places.",
-                    :input_html => { :rows => 1}
-                    %>
-        <%= f.input :solution,
-                      as: :text,
-                      label: "Solution",
-                      required: true,
-                      autofocus: true,
-                      placeholder: "Private car driving service.",
-                      :input_html => { :rows => 1}
-                      %>
-        </div>
-        <div class="form-actions d-flex">
-          <%# <%= link_to "Save & Exit", :submit, dashboard_path, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and back to dashboard' %>
-          <%= link_to "Cancel", :back, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
-          <%= f.button :submit, "Next", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-tippy-content": 'Add a persona' %>
-        </div>
-      <% end %>
-    </div>
+      </div>
+      <div class="form-actions d-flex">
+        <%# <%= link_to "Save & Exit", :submit, dashboard_path, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and back to dashboard' %>
+        <%= link_to "Cancel", :back, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
+        <%= f.button :submit, "Next", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-tippy-content": 'Add a persona' %>
+      </div>
+    <% end %>
   </div>
+</div>
 
 <button type="button" id ="hidden-button" class="d-none btn btn-primary" data-toggle="modal" data-target="#onboarding">
   Launch demo modal
