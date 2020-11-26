@@ -4,7 +4,13 @@
     <span class="logo">Pitcher.</span>
   <% end %>
   <% if user_signed_in? %>
-    <span id="greetings">Hi, <%= current_user.first_name %> 👋</span>
+    <% if action_name == "dashboard" || controller_name == "pages" %>
+      <span id="greetings">Hi, <%= current_user.first_name %> 👋</span>
+    <% else %>
+      <span id="greetings"><%= @demo.name %></span>
+    <% end %>
+  <% else %>
+      <span id="greetings">Hi, Stranger👋</span>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
