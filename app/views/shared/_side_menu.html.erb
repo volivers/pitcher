@@ -43,7 +43,7 @@
               <div class="container m-0">
                 <% if persona.userjourneys.any? %>
                   <% persona.userjourneys.each do |journey| %>
-                    <%= link_to "View #{persona.name}'s #{journey.name} Journey", demo_userjourney_path(@demo, journey.id), {:class=>'btn btn-ghost-white btn-sm m-4 px-2'} %>
+                    <%= link_to "View #{persona.name}'s #{journey.name} Journey", demo_userjourney_path(@demo, journey.id), {:class=>'btn btn-ghost-white btn-sm m-4 px-4'} %>
                   <% end %>
                 <% end %>
                 <% if persona.userjourneys.count < 2 %>
