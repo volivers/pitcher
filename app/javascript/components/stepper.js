@@ -5,7 +5,7 @@ function stepperToggle() {
   const personaEdit = document.querySelector('.personas.edit');
   const journeysNew = document.querySelector('.userjourneys.new');
   const journeysEdit = document.querySelector('.userjourneys.edit');
-  const flowShow = document.querySelector('.userjourneys.edit');
+  const flowShow = document.querySelector('.userjourneys.show');
   const stepperItemOne = document.querySelector("#breadcrumb-1");
   const stepperItemTwo = document.querySelector("#breadcrumb-2");
   const stepMarker = document.querySelector(".circle-marker")

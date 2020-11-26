@@ -18,13 +18,13 @@
     <div class="main-container container">
       <%= yield %>
     </div>
-    <% if controller_name == 'personas' && action_name == 'new' %>
+    <% if controller_name == 'personas' %>
       <%= render 'shared/stepper' %>
-    <% elsif controller_name == 'pitches' && action_name == 'new' %>
+    <% elsif controller_name == 'pitches' %>
       <%= render 'shared/stepper' %>
-    <% elsif controller_name == 'pitches' && action_name == 'edit' %>
+    <% elsif controller_name == 'userjourneys' && action_name == 'edit' || action_name == 'new' %>
       <%= render 'shared/stepper' %>
-    <% elsif controller_name == 'personas' && action_name == 'edit' %>
+    <% elsif controller_name == 'userjourneys' && action_name == 'show' %>
       <%= render 'shared/stepper' %>
     <% end %>
     <%= render 'shared/footer' %>
