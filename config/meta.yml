@@ -1,0 +1,5 @@
+meta_product_name: "Pitcher"
+meta_title: "Pitcher - Demo builder"
+meta_description: "Automate the prototyping processes in a single platform"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@Pitcher69300532"   # required for Twitter Cards
