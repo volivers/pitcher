@@ -19,7 +19,7 @@
         <!-- CANCEL : WORKING -->
         <%= link_to "Cancel", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
         <!-- SAVE & EXIT : NOT WORKING. SEE CONTROLLER -->
-        <%= f.button :submit, "Save", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
+        <%= f.button :submit, "Save & Exit", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
         <!-- CONTINUE ADD NEW PERSONA :  WORKING -->
         <% if @persona.userjourneys.count < 2 %>
           <%= f.button :submit, "Continue", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and start a new user journey' %>

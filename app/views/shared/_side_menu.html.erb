@@ -1,66 +1,34 @@
 <div id="sidebar" class="sidebar">
+
   <h4><%= @demo.name %></h4>
-  <% if controller_name == 'personas' && action_name == 'new' %>
-      <h4>Pitch:</h4>
-      <% if @pitch.present? %>
-          <p><%= @pitch.pain %><br>
-          <%= @pitch.target %><br>
-          <%= @pitch.solution %></p>
-      <% end %>
-      <h4>Persona:</h4>
-  <% elsif controller_name == 'pitches' && action_name == 'new' %>
-      <h4>Pitch:</h4>
-  <% elsif controller_name == 'pitches' && action_name == 'edit' %>
-      <h4>Pitch:</h4>
-      <% if @pitch.present? %>
-          <p><%= @pitch.pain %><br>
-          <%= @pitch.target %><br>
-          <%= @pitch.solution %></p>
-      <h4>Persona:</h4>
-      <% elsif @persona.present? %>
-          <p><%= @persona.name %><br>
-          <%= @persona.age %><br>
-          <%= @persona.bio %><br>
-          <%= @persona.nationality %><br>
-          <%= @persona.location %><br>
-          <%= @persona.job %><br>
-          <%= @persona.relationship_status %><br>
-          <%= @persona.income %></p>
-      <% end %>
-  <% elsif controller_name == 'personas' && action_name == 'edit' %>
-      <h4>Pitch:</h4>
-      <% if @pitch.present? %>
-          <p><%= @pitch.pain %><br>
-          <%= @pitch.target %><br>
-          <%= @pitch.solution %></p>
-      <h4>Persona:</h4>
-      <% elsif @persona.present? %>
-          <p><%= @persona.name %><br>
-          <%= @persona.age %><br>
-          <%= @persona.bio %><br>
-          <%= @persona.nationality %><br>
-          <%= @persona.location %><br>
-          <%= @persona.job %><br>
-          <%= @persona.relationship_status %><br>
-          <%= @persona.income %></p>
-      <% end %>
-      <% elsif controller_name == 'userjourneys' && action_name == 'new' %>
-      <h4>Pitch:</h4>
-      <% if @pitch.present? %>
-          <p><%= @pitch.pain %><br>
-          <%= @pitch.target %><br>
-          <%= @pitch.solution %></p>
-      <h4>Persona:</h4>
-      <% elsif @persona.present? %>
-        <% @personas.each do %>
-          <p><%= @persona.name %><br>
-          <%= @persona.bio %></p>
+  <%= link_to "Pitch", edit_demo_pitch_path(@demo, @demo.pitches.first.id), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
+  <%= @demo.pitches.first.pain %>
+  <%= @demo.pitches.first.solution %>
+  <%= @demo.pitches.first.target %>
+  <% if @demo.personas.any? %>
+    <% @demo.personas.each do |persona| %>
+      <%= persona.name %>
+      <%= persona.bio %>
+      <!-- In a accordion or a dropdown show following info -->
+        <%= persona.age %>
+        <%= persona.job %>
+        <%= persona.location %>
+        <%= persona.nationality %>
+        <%= persona.relationship_status %>
+        <%= persona.income %>
+      <!-- End-->
+      <% if persona.userjourneys.any? %>
+        <% persona.userjourneys.each do |journey| %>
+          <%= link_to "View #{persona.name}'s #{journey.name} Journey.", demo_userjourney_path(@demo, journey.id), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
         <% end %>
       <% end %>
-      <h4>User Journey:</h4>
-      <% elsif @userjourney.present? %>
-          <p><%= @userjourney.name %></p>
+      <% if persona.userjourneys.count < 2 %>
+        <%= link_to "Add a new journey.", new_demo_userjourney_path(@demo), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
       <% end %>
+    <% end %>
+  <% end %>
+  <% if @demo.personas.count < 2 %>
+    <%= link_to "Add a new persona.", new_demo_persona_path(@demo), {:class=>'', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
   <% end %>
 </div>
 
