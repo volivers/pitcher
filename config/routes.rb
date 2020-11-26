@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :demos, except: [:index] do
     resources :pitches, only: [:new, :create, :edit, :update, :destroy ]
-    resources :personas
+    resources :personas do
+      resources :userjourneys, only: [:new, :create]
+    end
     resources :userjourneys do
       resources :steps
     end
