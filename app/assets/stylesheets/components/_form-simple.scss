@@ -12,7 +12,21 @@
 
     &.is-valid {
       background-image: none;
+
+      &:focus {
+        box-shadow: none;
+      }
     }
+    .was-validated {
+      .form-control {
+        &:valid {
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
   }
   .form-inputs {
     .form-group {
