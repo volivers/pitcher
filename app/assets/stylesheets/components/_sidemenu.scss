@@ -107,10 +107,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
 
-  i {
-    justify-self: flex-end;
-  }
+#btn-pencil {
+  display: inline;
+  padding: 0;
 }
 
 @media screen and (max-height: 450px) {
