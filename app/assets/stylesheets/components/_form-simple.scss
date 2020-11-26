@@ -5,6 +5,14 @@
     background-color: transparent;
     border: 0;
     border-bottom: 1px solid $white-87;
+
+    &::placeholder {
+      color: $white-38;
+    }
+
+    &.is-valid {
+      background-image: none;
+    }
   }
   .form-inputs {
     .form-group {

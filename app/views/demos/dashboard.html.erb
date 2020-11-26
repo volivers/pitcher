@@ -22,12 +22,12 @@
                           data: { confirm: "Are you sure?" } do %>
                           Delete
                         <% end %>
-                        <%= link_to demo_path(demo), class: "dropdown-item" do %>
+                       <!--  <%#= link_to demo_path(demo), class: "dropdown-item" do %>
                           View
-                        <% end %>
+                        <%# end %> -->
                         <% if demo.pitches.any? %>
                           <%= link_to edit_demo_pitch_path(demo, demo.pitches.first, from: @from), class: "dropdown-item" do %>
-                            Edit Pitch
+                            Continue Building
                           <% end %>
                         <% else %>
                           <%= link_to new_demo_pitch_path(demo), class: "dropdown-item" do %>

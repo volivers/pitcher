@@ -33,8 +33,17 @@
         </div>
         <div class="form-actions d-flex">
           <%= link_to "Cancel", dashboard_path, :class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Back to dashboard' %>
-          <%# <%= f.button :submit, "Save and Exit", class: 'btn btn-primary next-btn' %>
-          <%= f.button :submit, "Continue", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and add a persona' %>
+          <%= f.button :submit, "Save and Exit", class: 'btn btn-primary next-btn' %>
+        </div>
+        <div class="form-actions d-flex">
+          <% if @demo.personas.any? %>
+            <%  @demo.personas.each do |persona| %>
+              <%= link_to "Edit #{persona.name}", edit_demo_persona_path(@demo, persona.id), {:class=>'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": "Edit #{persona.name}'s Profile"} %>
+            <% end %>
+          <% end %>
+          <% if @demo.personas.count < 2 %>
+            <%= f.button :submit, "Add a New Persona", class: 'btn btn-primary next-btn', "data-controller": 'tooltip', "data-placement": "bottom", "data-tippy-content": 'Save and continue your path to sucess' %>
+          <% end %>
         </div>
       <% end %>
   </div>
