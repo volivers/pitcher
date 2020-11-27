@@ -42,6 +42,7 @@ import { onboardingModal } from '../components/onboarding_modal.js';
 import { stepperToggle } from '../components/stepper';
 import { sidebarToggle } from '../components/sidemenu';
 import { bannerInit } from '../components/banner';
+import { textAnimate } from '../components/text';
 
 // const pitchNew = document.querySelector('.pitches.new');
 // const pitchEdit = document.querySelector('.pitches.edit');
@@ -59,6 +60,7 @@ document.addEventListener('turbolinks:load', (e) => {
   //onboardingModal(e);
   bannerInit(e);
   onboardingModal(e);
+  textAnimate(e);
   // if (pitchNew || pitchEdit) {
   //   sidebarToggle(e);
   //   stepperToggle(e);

@@ -78,23 +78,33 @@
   }
 
   a {
+    font-family: $font-monospace;
     color: $angular-black-60;
+    text-transform: initial;
   }
 }
 
 #feat-content {
   margin-top: 100px;
-
 }
 
-.intro-section.animate-now h1 {
+.text {
+  opacity: 0;
+}
+
+.loaded {
   opacity: 1;
+  transition: opacity 0.8s ease-in;
 }
 
-.intro-section.animate-now a {
-  opacity: 1;
-  visibility: visible;
-}
+// .intro-section.animate-now h1 {
+//   opacity: 1;
+// }
+
+// .intro-section.animate-now a {
+//   opacity: 1;
+//   visibility: visible;
+// }
 
 .container-intro {
   margin-top: 100px;
