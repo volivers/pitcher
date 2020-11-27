@@ -94,5 +94,5 @@ Persona.create!( name: "Sam", age: 50, bio: "Sam is a famous plastic surgeon and
 Step.create!( standpoint: "in the homepage", viewpoint: "a list of articles", actionpoint: "selects one of the trending articles to read", userjourney: @userjourney)
 Step.create!( standpoint: "in the article", viewpoint: "the article contents, after reading them", actionpoint: "decides go to the comment section", userjourney: @userjourney)
 Step.create!( standpoint: "in the comments section", viewpoint: "the reviews left by the other readers", actionpoint: "decides to leave a comment herself", userjourney: @userjourney)
-Step.create!( standpoint: "in the article", viewpoint: "she got a notification", actionpoint: "reads the message thanking her for the input", userjourney: @userjourney)
+Step.create!( standpoint: "in the article", viewpoint: "she gets a notification", actionpoint: "reads the message thanking her for the input", userjourney: @userjourney)
 
