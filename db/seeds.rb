@@ -12,21 +12,6 @@ User.destroy_all
 puts 'Creating Emily user ...'
 @emily = User.create!( first_name: 'Emily', last_name: "Burns", email: "emily@gmail.com", password: "123456", account_type: 'basic' )
 
-# Modium (blogging)
-puts 'Creating Modium demo ...'
-
-@demo = Demo.create!( name: 'Modium', url: "www.pitcher.com/preview/modium", user_id: @emily.id )
-Pitch.create!( pain: "No available apps on the market to solve this problem.", target: "Everyone who faces this problem.", solution: "App to solve the problem.", demo: @demo )
-Persona.create!( name: "Luca", age: 50, bio: "Luca is a famous plastic surgeon and has 2 kids. In his spare time, he loves fishing and blogging.", nationality: "Italian-American", location: "New York, US", job: "Plastic Surgeon", relationship_status: "Married", income: "250.000€/year", demo: @demo )
-@persona = Persona.create!( name: "Darlene", age: 30, bio: "Darlene is a programmer and ethical hacker working for the FBI. She loves fashion blogs and Reddit.", nationality: "American", location: "New York, US", job: "Programmer", relationship_status: "Single", income: "$90.000/year", demo: @demo )
-@userjourney = Userjourney.create!( name: "Reading article", persona: @persona, demo: @demo)
-Step.create!( standpoint: "in the homepage", viewpoint: "a list of articles trending", actionpoint: "selects one article", userjourney: @userjourney)
-Step.create!( standpoint: "in the article", viewpoint: "the article details", actionpoint: "decides to read the article", userjourney: @userjourney)
-Step.create!( standpoint: "in the article", viewpoint: "the comments section", actionpoint: "selects one article", userjourney: @userjourney)
-Step.create!( standpoint: "in the article", viewpoint: "a list of recommended articles", actionpoint: "selects one article", userjourney: @userjourney)
-Step.create!( standpoint: "in the article", viewpoint: "the article options", actionpoint: "decides to bookmark the article", userjourney: @userjourney)
-
-
 # Amazona (marketplace)
 puts 'Creating Amazona demo ...'
 
@@ -69,7 +54,7 @@ Step.create!( standpoint: "in his account", viewpoint: "the payments section", a
 Step.create!( standpoint: "in the payment", viewpoint: "the payee details form", actionpoint: "enters the payee details to confirm the payment", userjourney: @userjourney)
 
 
-# Tinderoo (dating)
+# Tender (dating)
 puts 'Creating Tender demo ...'
 
 @demo = Demo.create!( name: 'Tender', url: "www.pitcher.com/preview/tender", user_id: @emily.id )
@@ -82,3 +67,18 @@ Step.create!( standpoint: "in the profile", viewpoint: "the potential match deta
 Step.create!( standpoint: "in the profile", viewpoint: "the potential match details", actionpoint: "swipes right", userjourney: @userjourney)
 Step.create!( standpoint: "in the profile", viewpoint: "the potential match details", actionpoint: "decides to read his details", userjourney: @userjourney)
 Step.create!( standpoint: "in the profile", viewpoint: "the potential match details", actionpoint: "swipes left", userjourney: @userjourney)
+
+
+# Modium (blogging)
+puts 'Creating Modium demo ...'
+
+@demo = Demo.create!( name: 'Modium', url: "www.pitcher.com/preview/modium", user_id: @emily.id )
+Pitch.create!( pain: "No available apps on the market to solve this problem.", target: "Everyone who faces this problem.", solution: "App to solve the problem.", demo: @demo )
+Persona.create!( name: "Luca", age: 50, bio: "Luca is a famous plastic surgeon and has 2 kids. In his spare time, he loves fishing and blogging.", nationality: "Italian-American", location: "New York, US", job: "Plastic Surgeon", relationship_status: "Married", income: "250.000€/year", demo: @demo )
+@persona = Persona.create!( name: "Darlene", age: 30, bio: "Darlene is a programmer and ethical hacker working for the FBI. She loves fashion blogs and Reddit.", nationality: "American", location: "New York, US", job: "Programmer", relationship_status: "Single", income: "$90.000/year", demo: @demo )
+@userjourney = Userjourney.create!( name: "Reading article", persona: @persona, demo: @demo)
+Step.create!( standpoint: "in the homepage", viewpoint: "a list of articles trending", actionpoint: "selects one article", userjourney: @userjourney)
+Step.create!( standpoint: "in the article", viewpoint: "the article details", actionpoint: "decides to read the article", userjourney: @userjourney)
+Step.create!( standpoint: "in the article", viewpoint: "the comments section", actionpoint: "selects one article", userjourney: @userjourney)
+Step.create!( standpoint: "in the article", viewpoint: "a list of recommended articles", actionpoint: "selects one article", userjourney: @userjourney)
+Step.create!( standpoint: "in the article", viewpoint: "the article options", actionpoint: "decides to bookmark the article", userjourney: @userjourney)
