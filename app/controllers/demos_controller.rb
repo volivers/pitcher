@@ -8,7 +8,6 @@ class DemosController < ApplicationController
     @demo = Demo.new
     @valid = true
     # session[:last_page] = action_name
-    @from = action_name
   end
 
   def new

@@ -13,8 +13,8 @@
       <span>, <%= @userjourney.persona.name %> then </span>
     <% end %>
     <%= f.input :actionpoint %><span class="">.</span>
-    <%= link_to_remove_association f , class: "btn btn-demo d-flex align-items-end", type: "button", id: "buttonModal",  data: {toggle:"modal", target:"#demoModal"} do %>
-      <div class="circle circle-sm circle-white" data-toggle="tooltip" data-placement="bottom" title="Delete a step">
+    <%= link_to_remove_association f , class: "btn btn-demo d-flex align-items-end", type: "button" do %>
+      <div class="circle circle-sm circle-white" data-controller="tooltip" data-placement="bottom" data-tippy-content="Delete a step">
         <%= image_tag "icons/delete.svg" %>
       </div>
     <% end %>

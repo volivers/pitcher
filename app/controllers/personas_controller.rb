@@ -33,13 +33,12 @@ class PersonasController < ApplicationController
     @persona.demo_id = Demo.find(params[:demo_id]).id
     # params[:from] is nil……why?!
     if @persona.save
-      if params[:from] == "dashboard"
-        params[:from] = ""
+      if params[:commit].include? 'Add'
         redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
-        # TODO:fix redirect redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+      elsif params[:commit].include? 'Edit'
+        redirect_to edit_demo_userjourney_path(@demo, journey)
       else
-        params[:from] = ""
-        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end
     else
       render :new

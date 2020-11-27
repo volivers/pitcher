@@ -2,18 +2,33 @@
 
 <!-- Modal -->
 <div class="modal fade" id="onboarding" tabindex="-1" role="dialog" aria-labelledby="onboardingTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <!--<div class="modal-dialog modal-dialog-centered" role="document">-->
+  <div class="modal-dialog" role="document" id="draggable" class="ui-widget-content">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLongTitle">Pitch Onboarding</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button>-->
       </div>
       <div class="modal-body">
           <%= render 'pitches/onboarding' %>
       </div>
       <div class="modal-footer">
+        <ul class="pagination pagination-sm">
+          <li class="page-item">
+            <span class="page-link active" id="step1" href="#">Step 1</span>
+          </li>
+          <li class="page-item">
+            <span class="page-link" id="step2" href="#">Step 2</span>
+          </li>
+          <li class="page-item">
+            <span  class="page-link" id="step3" href="#">Step 3</span>
+          </li>
+          <li class="page-item">
+            <span  class="page-link" id="step4" href="#">Step 4</span>
+          </li>
+        </ul>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Skip</button>
       </div>
     </div>

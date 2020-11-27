@@ -1,7 +1,7 @@
 <%= render 'shared/side_menu' %>
 <div class="row d-flex justify-content-center">
   <div class="header-form col-12">
-    <h6><%= @demo.name %></h6>
+    <!-- <h6><%#= @demo.name %></h6> -->
 
     <h1 class="mb-5">
       This is <%= @userjourney.persona.name %> <%= controller_name %></h1>
@@ -16,8 +16,8 @@
       <% @userjourney.steps.each do |step| %>
         <div class="step step-<%= i += 1 %>">
           <div class="standpoint">
-            <h6><%= step.standpoint %></h6>
-            <small><%= step.viewpoint %></small>
+            <!-- <h6><%#= step.standpoint %></h6>
+            <small><%#= step.viewpoint %></small> -->
             <div class="backdrop-component" data-standpoint="<%= step.standpoint %>">
               <%= image_tag "ui-components/backdrop.svg" %>
             </div>
@@ -48,7 +48,6 @@
                       <div class="detail-item"><%= image_tag "ui-components/image-single.svg"%></div>
                       <div class="detail-item"><%= image_tag "ui-components/body-multiline.svg"%></div>
                       <div class="detail-item"><%= image_tag "ui-components/body-multiline.svg"%></div>
-                      <div class="detail-item button"><%= image_tag "ui-components/button-block.svg"%></div>
                     </div>
                   </div>
                 <% end %>
@@ -117,7 +116,7 @@
             </div>
           </div>
           <div class="actionpoint">
-            <p><%= step.actionpoint %> → </p>
+            <p><%= step.actionpoint %> <i class="fas fa-arrow-right"></i> </p>
           </div>
         </div>
       <% end %>

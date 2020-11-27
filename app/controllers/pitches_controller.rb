@@ -38,11 +38,11 @@ class PitchesController < ApplicationController
     if @pitch.save
       if params[:commit].include? 'New'
         demo_id = params[:demo_id]
-        redirect_to new_demo_persona_path(demo_id, pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to new_demo_persona_path(demo_id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       elsif params[:commit].include? 'Edit'
         demo_id = params[:demo_id]
-        persona_id = params[:edit_persona]
-        redirect_to edit_demo_persona_path(demo_id, persona_id, pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        persona_id = params[:persona_id]
+        redirect_to edit_demo_persona_path(demo_id, persona_id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       else
         redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end

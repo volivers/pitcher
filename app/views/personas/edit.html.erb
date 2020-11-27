@@ -7,7 +7,7 @@
       <div class="form-inputs">
           <%= f.input :name, placeholder: 'Robin Scherbatsky' %>
           <%= f.input :age, placeholder: '28' %>
-          <%= f.input :bio, placeholder: 'Tell more about Robin' %>
+          <%= f.input :bio, placeholder: 'Tell more about Robin', :input_html => { :rows => 4} %>
           <%= f.input :nationality, placeholder: 'Canadian' %>
           <%= f.input :location, placeholder: 'New York, US' %>
           <%= f.input :job, placeholder: 'Journalist (full-time)' %>
@@ -16,17 +16,16 @@
       </div>
 
       <div class="form-actions d-flex">
-        <!-- CANCEL : WORKING -->
         <%= link_to "Cancel", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Back to dashboard'} %>
-        <!-- SAVE & EXIT : NOT WORKING. SEE CONTROLLER -->
         <%= f.button :submit, "Save & Exit", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
       </div>
       <div class="form-actions d-flex">
-        <!-- EDIT PERSONA JOURNEYS: COUNT IS WORKING || BUT POST IS NOT WORKING. SEE CONTROLLER -->
         <% if @demo.userjourneys.any? %>
         <% i = 0 %>
           <% @demo.userjourneys.each do |journey| %>
-            <%= link_to "Edit #{@persona.name}'s Journey #{i += 1}", edit_demo_userjourney_path(@demo, journey), {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": "Save and Edit #{@persona.name}'s '#{journey.name}' Journey"} %>
+            <%= hidden_field_tag :user_journey, journey %>
+            <%= f.button :submit, "Edit #{@persona.name}'s Journey #{i += 1}", class: 'btn btn-primary', "data-controller": 'tooltip', "data-tippy-content": 'Save and go to dashboard' %>
+            <%#= link_to "Edit #{@persona.name}'s Journey #{i += 1}", edit_demo_userjourney_path(@demo, journey), {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": "Save and Edit #{@persona.name}'s '#{journey.name}' Journey"} %>
           <% end %>
         <% end %>
         <!-- CONTINUE ADD NEW PERSONA :  WORKING -->
