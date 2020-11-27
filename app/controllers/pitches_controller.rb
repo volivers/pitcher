@@ -20,9 +20,9 @@ class PitchesController < ApplicationController
       # redirect_to new_demo_persona_path(pitch: @pitch.id), notice: 'Kitty: Yay! 🎉 You create your pitch.'
       if params[:commit].include? 'Add'
         demo_id = params[:demo_id]
-        redirect_to new_demo_persona_path(demo_id, pitch: @pitch.id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to new_demo_persona_path(demo_id, pitch: @pitch.id) #, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       else
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to dashboard_path #, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end
     else
       render :new
@@ -38,13 +38,13 @@ class PitchesController < ApplicationController
     if @pitch.save
       if params[:commit].include? 'New'
         demo_id = params[:demo_id]
-        redirect_to new_demo_persona_path(demo_id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to new_demo_persona_path(demo_id) #, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       elsif params[:commit].include? 'Edit'
         demo_id = params[:demo_id]
         persona_id = params[:persona_id]
-        redirect_to edit_demo_persona_path(demo_id, persona_id), notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to edit_demo_persona_path(demo_id, persona_id) #, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       else
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to dashboard_path #, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end
     else
       render :partial => 'modal-pitch'
@@ -58,7 +58,7 @@ class PitchesController < ApplicationController
 
   def destroy
     if @pitch.destroy
-      redirect_to dashboard_path, notice: 'Yay! ❌ Your pitch was successfully deleted.'
+      redirect_to dashboard_path #, notice: 'Yay! ❌ Your pitch was successfully deleted.'
     else
       render :show
     end

@@ -18,7 +18,7 @@ class PersonasController < ApplicationController
     @pitch = Pitch.find(params[:pitch])
     if @persona.save
       # TODO: redirect to path depending on the clicked button || will we need to create different routes/methods?
-      redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+      redirect_to new_demo_userjourney_path(persona_id: @persona.id) #, notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
     else
       render :new
     end
@@ -34,11 +34,11 @@ class PersonasController < ApplicationController
     # params[:from] is nil……why?!
     if @persona.save
       if params[:commit].include? 'Add'
-        redirect_to new_demo_userjourney_path(persona_id: @persona.id), notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
+        redirect_to new_demo_userjourney_path(persona_id: @persona.id) #, notice: 'Yay! 🎉 Your persona was successfully updated. Check it out 👇'
       elsif params[:commit].include? 'Edit'
         redirect_to edit_demo_userjourney_path(@demo, journey)
       else
-        redirect_to dashboard_path, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
+        redirect_to dashboard_path #, notice: 'Yay! 🎉 Your pitch was successfully updated. Check it out 👇'
       end
     else
       render :new
@@ -48,7 +48,7 @@ class PersonasController < ApplicationController
   def destroy
     @persona = Persona.find(params[:id])
     @persona.destroy
-    redirect_to dashboard_path, notice: 'Yay! 🎉 Your persona was successfully removed.'
+    redirect_to dashboard_path #, notice: 'Yay! 🎉 Your persona was successfully removed.'
   end
 
   private
