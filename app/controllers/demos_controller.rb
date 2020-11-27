@@ -43,7 +43,7 @@ class DemosController < ApplicationController
 
   def destroy
     if @demo.destroy
-      redirect_to dashboard_path, notice: 'Yay! 🎉 Your demo was successfully deleted.'
+      redirect_to dashboard_path # , notice: 'Yay! 🎉 Your demo was successfully deleted.'
     else
       render :show
     end

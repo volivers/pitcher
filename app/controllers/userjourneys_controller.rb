@@ -18,7 +18,7 @@ class UserjourneysController < ApplicationController
     @persona = Persona.find(params[:userjourney][:persona_id])
     @persona.name = @userjourney.persona.name
     if @userjourney.save
-      redirect_to demo_userjourney_path(@demo, @userjourney), notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
+      redirect_to demo_userjourney_path(@demo, @userjourney) #, notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class UserjourneysController < ApplicationController
     @steps = Step.all
     @viewpoint_dictionary = {
       grids: ["list", "index", "grid"],
-      details: ["details", "overview", "profile"],
+      details: ["content", "contents","details", "overview", "profile"],
       lists: ["items", "offers"],
       payments: ["payment", "checkout", "basket"],
       notification: ["alert", "popup", "modal", "window", "notification", "message"],
@@ -72,7 +72,7 @@ class UserjourneysController < ApplicationController
     @userjourney.update(userjourney_params)
     @userjourney.demo = @demo
     if @userjourney.save
-      redirect_to demo_userjourney_path(@demo, @userjourney), notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
+      redirect_to demo_userjourney_path(@demo, @userjourney) #, notice: 'Yay! 🎉 Your [Persona Name] User journey was successfully saved. Check it out 👇'
     else
       render :new
     end
@@ -80,7 +80,7 @@ class UserjourneysController < ApplicationController
 
   def destroy
     @userjourney.destroy
-    redirect_to dashboard_path, notice: 'Yay! 🎉 Your userjourney was successfully removed.'
+    redirect_to dashboard_path #, notice: 'Yay! 🎉 Your userjourney was successfully removed.'
   end
 
   private

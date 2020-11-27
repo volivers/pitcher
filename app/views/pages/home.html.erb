@@ -4,7 +4,7 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12">
         <div class="intro-section">
-          <h1 class="text">Welcome to the <span id="future">future</span><br> of demo days.</h1>
+          <h1 class="text">Welcome to the <span id="future" style="background-color:#000000e6; border-radius:2px">future</span><br> of demo days.</h1>
           <a href="/dashboard" class="btn btn-circle">Let's get started <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
@@ -14,39 +14,44 @@
     <div id="mouse_wheel"></div>
   </div>
 </section>
-<section class="section section-intro">
-  <div class="container-intro">
+<section class="row section section-intro">
+  <div class="col-10">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12">
-        <div class="intro-section" id="feat-content">
-          <div class="feat">
+        <div class="intro-section d-flex flex-column" id="feat-content">
+          <div class="feat w-50 mt-2">
             <h2>More Experiments,<br>
             Better Results</h2>
             <p>Radically simple. Incredibly capable. The Pitcher<br>
             lets you design, execute, and analyze multiple digital<br>
             experiments, faster and more reliably. All in one app.</p>
           </div>
-          <div class="feat">
+          <div class="feat w-50 align-self-end mt-2">
             <h2>Total Awareness,<br>
             End to End</h2>
             <p>Easily start building your demo with a step by step<br>
             onboarding walkthrough. The Pitcher provides the support<br>
             you need to review and adjust your processes.</p>
           </div>
-          <div class="feat">
+          <div class="feat w-50 mt-2">
             <h2>A Visual Playbook<br>
             Made Simple</h2>
             <p>Intuitively pick, customize and validate<br>
             your demo thanks to a tailor-made template library.</p>
           </div>
-          <div class="feat">
+          <div class="feat w-50 align-self-end mt-2">
             <h2>From User Journey to<br> Flow Automation <small><sup><span class="badge badge-primary">BETA</span></sup></small></h2>
             <p>Take control of your UX. The Pitcher lets you<br>
             plan and automate all the steps your app needs based<br>
             on 3 innovative points: Stand, View, and Action.</p>
           </div>
-          <%= link_to "EXPLORE", dashboard_path, {:class=>'btn btn-ghost btn-md m-4 px-4'} %>
+          <div class="w-50 align-self-end m-4 pr-4">
+            <a href="/dashboard" class="btn btn-circle m-4 pr-4">Explore <i class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <%#= link_to "EXPLORE", dashboard_path, {:class=>'btn btn-ghost btn-md m-4 px-4'} %>
         </div>
+
       </div>
     </div>
   </div>
@@ -56,7 +61,7 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12">
         <div class="intro-section">
-          <h1 id="what-up">What's next</h1>
+          <h2 id="what-up">What's next</h2>
           <div id="follow-up">
             <h2>Prototype<br>
             Like A Pro</h2>
