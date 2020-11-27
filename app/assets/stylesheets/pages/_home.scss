@@ -3,6 +3,7 @@
   top: 0;
   height: 100%;
   width: 100%;
+  position: fixed;
 }
 
 .btn-circle {
@@ -43,14 +44,47 @@
 }
 
 .section-intro {
-  background-image: url('https://c0.anyrgb.com/images/62/99/gradient-background-nature-wallpaper-purple-color-color-gradient-gradient-background-gradient-wallpaper-desktop-wallpaper.jpg');
-  background-size: cover;
   position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: none;
+  margin-bottom: 100px;
+
+  h1 {
+    color: $angular-black-87;
+    font-size: 60px;
+    line-height: 110%;
+  }
+
+  h2 {
+    color: $angular-black-87;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: $angular-black-87;
+    font-family: $font-monospace;
+  }
+
+  #future {
+    color: #fff;
+    background-color: $primary;
+    padding: 0 15px;
+    mix-blend-mode: multiply;
+  }
+
+  a {
+    color: $angular-black-60;
+  }
+}
+
+#feat-content {
+  margin-top: 100px;
+
 }
 
 .intro-section.animate-now h1 {
@@ -63,31 +97,53 @@
 }
 
 .container-intro {
-  // margin-left: 80px;
-  margin-right: 600px;
-  margin-top: 50px;
+  margin-top: 100px;
+  margin-right: 300px;
+}
+
+#what-up {
+  font-size: 100px;
+}
+
+#sum-up {
+  background-color: $primary;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#follow-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 #mouse_body {
   border-style: solid;
   border-width: 2px;
-  border-color: #fff;
+  border-color: $angular-black-13;
   border-radius: 32px;
   /* used just to add space from top */
-  margin-top: 150px !important;
+  margin-top: 200px !important;
   /* size of the mouse body */
   height: 43px;
   width: 23px;
    /* to center in browser */
   margin: 0 auto;
+  z-index: 100;
 }
 
 #mouse_wheel {
   border-style: solid;
   border-width: 2px;
-  border-color: #fff;
+  border-color: $angular-black-13;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: $angular-black-13;
   /* position property required to play animation  */
   position: relative; 
   height: 3px;
