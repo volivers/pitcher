@@ -83,7 +83,7 @@ Step.create!( standpoint: "in the profile", viewpoint: "the potential match deta
 Step.create!( standpoint: "in the profile", viewpoint: "the potential match details", actionpoint: "decides to read his details", userjourney: @userjourney)
 Step.create!( standpoint: "in the profile", viewpoint: "the potential match details", actionpoint: "swipes left", userjourney: @userjourney)
 
-# Modium (blogging)
+# Reddux (blogging)
 puts 'Creating Reddux demo ...'
 
 @demo = Demo.create!( name: 'Reddux', url: "www.pitcher.com/preview/reddux", user_id: @emily.id )
