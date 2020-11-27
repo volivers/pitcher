@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-// require("jquery")
+require("jquery")
 require("@nathanvda/cocoon")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -26,6 +26,7 @@ require("@nathanvda/cocoon")
 // External imports
 import "bootstrap";
 import "controllers"
+//import "jquery"
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
@@ -55,7 +56,7 @@ document.addEventListener('turbolinks:load', (e) => {
   scrollDepthIndicator(e);
   sidebarToggle(e);
   stepperToggle(e);
-  onboardingModal(e);
+  //onboardingModal(e);
   bannerInit(e);
   onboardingModal(e);
   // if (pitchNew || pitchEdit) {

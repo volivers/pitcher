@@ -1,11 +1,11 @@
 .sidebar {
   height: 100%;
-  width: 300px;
+  width: 350px;
   position: fixed;
   top: 56px;
   left: 0;
   background-color:  $angular-black;
-  transform: translateX(-300px);
+  transform: translateX(-350px);
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.3s ease;
@@ -27,11 +27,11 @@
   background-color: transparent;
   border: 0;
   z-index: 99;
-  transform: translateX(-100px);
+  transform: translateX(-150px);
   transition: transform 0.3s ease;
 
   &.open {
-    transform: translateX(75px);
+    transform: translateX(150px);
     color: $white-87;
   }
 

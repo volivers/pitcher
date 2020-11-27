@@ -11,7 +11,7 @@
             <% if @demos.any? %>
               <% @demos.each do |demo| %>
                 <div class="card-demo-container" >
-                  <div class="card-demo" data-controller="tooltip" data-placement="top" data-tippy-content="Click the menu button the explore your options">
+                  <div class="card-demo" data-controller="tooltip" data-placement="top" data-tippy-content="Explore your options. Click the menu button.">
                     <div class="card-demo-top dropdown">
                       <a class="card-demo-actions dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-v small"></i>
@@ -69,17 +69,19 @@
                         <% end %>
                       </div>
                     </div>
-                    <%= link_to demo_path(demo), class: "card-demo-bottom-wrapper" do %>
+                    <%= link_to demo_path(demo), class: "card-demo-bottom-wrapper inactive" do %>
                       <div class="card-demo-bottom d-flex flex-column justify-content-end">
                         <% if demo.pitches.any? %>
                           <h6><%= demo.pitches.first.pain %></h6>
+                          <h6><%= demo.pitches.first.target %></h6>
+                          <h6><%= demo.pitches.first.solution %></h6>
                         <% end %>
                         <% if demo.personas.any? %>
                           <% demo.personas.each do |persona| %>
                             <h6><i class="far fa-user"></i> <%= persona.name %></h6>
                           <% end %>
                         <% end %>
-                        <h3><%= demo.name %></h3>
+                        <h1><%= demo.name %></h1>
                       </div>
                     <% end %>
                   </div>

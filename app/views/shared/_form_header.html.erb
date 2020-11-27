@@ -7,26 +7,43 @@
         <% elsif controller_name == "personas" %>
           Who's your <%= @demo.name %> app for? Describe your Primary/Secundary Audience.
         <% elsif controller_name == "userjourneys" %>
-          Create <%= @persona.name %> <%= controller_name %>
+          Create a user journey for <%= @persona.name %>. <br>
         <% end %>
       </h1>
-      <!--<h6 class="info">Please fill in the form to create a new <%= controller_name %></h6>-->
+      <h6 class="info">
+        <% if controller_name == "pitches" %>
+          Please fill in the form to create a new pitch.
+        <% elsif controller_name == "personas" %>
+          Who's your <%= @demo.name %> app for? Describe your Primary/Secundary Audience.
+        <% elsif controller_name == "userjourneys" %>
+           Don't forget to give it a name. <span style="color: black">😉</span>
+        <% end %>
+      </h6>
     </div>
   </div>
 <% else %>
   <div class="row d-flex justify-content-center">
     <div class="header-form col-12">
-      <h6><%= @demo.name %></h6>
-
+      <!-- <h6><%#s= @demo.name %></h6>
+ -->
       <h1 class="mb-5">
         <% if controller_name == "pitches" %>
-          Update your <%= @demo.name %> Pitch</h1>
+          Update your <%= @demo.name %> Pitch
         <% elsif controller_name == "personas" %>
-          Update <%= @persona.name %> <%= controller_name %></h1>
+          Update <%= @persona.name %>'s Persona
         <% elsif controller_name == "userjourneys" %>
-          Update <%= @userjourney.persona.name %> <%= controller_name %></h1>
+          Update <%= @userjourney.persona.name %>'s User Journey
         <% end %>
-      <!--<h6 class="info">Please fill in the form to update your <%= controller_name %></h6>-->
+      </h1>
+      <h6 class="info">
+        <% if controller_name == "pitches" %>
+          Keep refining your Pitch, until you're happy with it! <span style="color: black">🎯</span>
+        <% elsif controller_name == "personas" %>
+          Changed your mind? Redefine your target audience <span style="color: black">🧲</span>, as much as you need.
+        <% elsif controller_name == "userjourneys" %>
+          User Journeys are hard and confusing. Keep coming back until it's "Just Right" <span style="color: black">👌</span>
+        <% end %>
+      </h6>
     </div>
   </div>
 <% end %>
