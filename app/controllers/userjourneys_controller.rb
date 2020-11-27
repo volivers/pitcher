@@ -28,7 +28,7 @@ class UserjourneysController < ApplicationController
     @steps = Step.all
     @viewpoint_dictionary = {
       grids: ["list", "index", "grid"],
-      details: ["details", "overview", "profile"],
+      details: ["content", "contents","details", "overview", "profile"],
       lists: ["items", "offers"],
       payments: ["payment", "checkout", "basket"],
       notification: ["alert", "popup", "modal", "window", "notification", "message"],
