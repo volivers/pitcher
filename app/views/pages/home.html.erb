@@ -1,10 +1,10 @@
 <section class="section section-intro" id="home">
-  <canvas id='canv' class="canvas" data-bgColor="#000"></canvas>
+  <canvas id='canv' class="canvas" data-bgColor="#fff"></canvas>
   <div class="container-intro">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12">
         <div class="intro-section">
-          <h1 id="text">Welcome to the future<br> of demo days</h1>
+          <h1 id="text">Welcome to the <span id="future">future</span><br> of demo days.</h1>
           <a href="#contact" class="btn btn-circle mt-5">Let's get started <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
@@ -15,35 +15,68 @@
   </div>
 </section>
 <section class="section section-intro">
-  <canvas id='canv' class="canvas" data-bgColor="#000"></canvas>
   <div class="container-intro">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12">
-        <div class="intro-section">
-          <h1>Pitcher Main Features</h1>
-          <h3 id="text">All in one App</h3>
-          <p>Description</p>
-          <h3 id="text">Onboarding Walkthrough</h3>
-          <p>Description</p>
-          <h3 id="text">Template Library</h3>
-          <p>Description</p>
-          <h3 id="text">User Journey to User Flow Automation <small>BETA</small></h3>
-          <p>Description</p>
-          <%= link_to "EXPLORE", dashboard_path, {:class=>'btn btn-primary back-btn', "data-controller": 'tooltip', "data-tippy-content": 'Give it a test run'} %>
+        <div class="intro-section" id="feat-content">
+          <div class="feat">
+            <h2>More Experiments,<br>
+            Better Results</h2>
+            <p>Radically simple. Incredibly capable. The Pitcher<br>
+            lets you design, execute, and analyze multiple digital<br>
+            experiments, faster and more reliably. All in one app.</p>
+          </div>
+          <div class="feat">
+            <h2>Total Awareness,<br>
+            End to End</h2>
+            <p>Easily start building your demo with a step by step<br>
+            onboarding walkthrough. The Pitcher provides the support<br>
+            you need to review and adjust your processes.</p>
+          </div>
+          <div class="feat">
+            <h2>A Visual Playbook<br>
+            Made Simple</h2>
+            <p>Intuitively pick, customize and validate<br>
+            your demo thanks to a tailor-made template library.</p>
+          </div>
+          <div class="feat">
+            <h2>From User Journey to<br> Flow Automation <small><sup><span class="badge badge-primary">BETA</span></sup></small></h2>
+            <p>Take control of your UX. The Pitcher lets you<br>
+            plan and automate all the steps your app needs based<br>
+            on 3 innovative points: Stand, View, and Action.</p>
+          </div>
+          <%= link_to "EXPLORE", dashboard_path, {:class=>'btn btn-ghost btn-md m-4 px-4', "data-controller": 'tooltip', "data-tippy-content": 'Give it a test run'} %>
         </div>
       </div>
     </div>
   </div>
 </section>
 <section class="section section-intro">
-  <canvas id='canv' class="canvas" data-bgColor="#000"></canvas>
   <div class="container-intro">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-12">
         <div class="intro-section">
-          <h1>Pitcher What's next</h1>
+          <h1 id="what-up">What's next</h1>
+          <div id="follow-up">
+            <h2>Prototype<br>
+            Like A Pro</h2>
+            <h1 id="sum-up">+</h1>
+            <h2>Results Made<br>
+            Live & Shareable</h2>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<%# <section class="section section-intro">
+  <div class="container-intro">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-12">
+        <div class="intro-section">
+          <h1>R:</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> %>
